@@ -11,15 +11,15 @@
   "includeAdditionalData": true,
   "disableSSLValidation": false,
   "serializers": [
-    "@microsoft/kiota-serialization-form.FormSerializationWriterFactory",
-    "@microsoft/kiota-serialization-json.JsonSerializationWriterFactory",
-    "@microsoft/kiota-serialization-text.TextSerializationWriterFactory",
-    "@microsoft/kiota-serialization-multipart.MultipartSerializationWriterFactory"
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
   ],
   "deserializers": [
-    "@microsoft/kiota-serialization-form.FormParseNodeFactory",
-    "@microsoft/kiota-serialization-json.JsonParseNodeFactory",
-    "@microsoft/kiota-serialization-text.TextParseNodeFactory"
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
   ],
   "structuredMimeTypes": [
     "application/json",
@@ -27,15 +27,7 @@
     "application/x-www-form-urlencoded;q=0.2",
     "multipart/form-data;q=0.1"
   ],
-  "includePatterns": [
-    "/ActressSearch",
-    "/AuthorSearch",
-    "/FloorList",
-    "/GenreSearch",
-    "/ItemList",
-    "/MakerSearch",
-    "/SeriesSearch"
-  ],
+  "includePatterns": [],
   "excludePatterns": [],
   "disabledValidationRules": []
 }

@@ -70,13 +70,13 @@ import {
  */
 // @ts-ignore
 export function createDMMClient(requestAdapter: RequestAdapter) {
-  registerDefaultSerializer(FormSerializationWriterFactory);
   registerDefaultSerializer(JsonSerializationWriterFactory);
   registerDefaultSerializer(TextSerializationWriterFactory);
+  registerDefaultSerializer(FormSerializationWriterFactory);
   registerDefaultSerializer(MultipartSerializationWriterFactory);
-  registerDefaultDeserializer(FormParseNodeFactory);
   registerDefaultDeserializer(JsonParseNodeFactory);
   registerDefaultDeserializer(TextParseNodeFactory);
+  registerDefaultDeserializer(FormParseNodeFactory);
   if (requestAdapter.baseUrl === undefined || requestAdapter.baseUrl === "") {
     requestAdapter.baseUrl = "https://api.dmm.com/affiliate/v3";
   }

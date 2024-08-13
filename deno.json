@@ -6,11 +6,16 @@
     "@microsoft/kiota-serialization-form": "npm:@microsoft/kiota-serialization-form@^1.0.0-preview.48",
     "@microsoft/kiota-serialization-json": "npm:@microsoft/kiota-serialization-json@^1.0.0-preview.59",
     "@microsoft/kiota-serialization-multipart": "npm:@microsoft/kiota-serialization-multipart@^1.0.0-preview.37",
-    "@microsoft/kiota-serialization-text": "npm:@microsoft/kiota-serialization-text@^1.0.0-preview.56"
+    "@microsoft/kiota-serialization-text": "npm:@microsoft/kiota-serialization-text@^1.0.0-preview.56",
+    "@std/assert": "jsr:@std/assert@^1.0.2",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.0"
   },
   "lint": {
     "exclude": [
       "client"
     ]
+  },
+  "tasks": {
+    "generate": "kiota generate -l typescript -d ./spec/dmm.oas.yaml -c DMMClient -n DMMSDK -o ./client && deno run --allow-read --allow-write ./scripts/postKiotaGenerate.ts && deno fmt"
   }
 }
