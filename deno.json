@@ -1,0 +1,16 @@
+{
+  "lock": false,
+  "imports": {
+    "@microsoft/kiota-abstractions": "npm:@microsoft/kiota-abstractions@^1.0.0-preview.59",
+    "@microsoft/kiota-http-fetchlibrary": "npm:@microsoft/kiota-http-fetchlibrary@^1.0.0-preview.58",
+    "@microsoft/kiota-serialization-form": "npm:@microsoft/kiota-serialization-form@^1.0.0-preview.48",
+    "@microsoft/kiota-serialization-json": "npm:@microsoft/kiota-serialization-json@^1.0.0-preview.59",
+    "@microsoft/kiota-serialization-multipart": "npm:@microsoft/kiota-serialization-multipart@^1.0.0-preview.37",
+    "@microsoft/kiota-serialization-text": "npm:@microsoft/kiota-serialization-text@^1.0.0-preview.56"
+  },
+  "lint": {
+    "exclude": [
+      "client"
+    ]
+  }
+}
