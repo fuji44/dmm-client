@@ -15,6 +15,17 @@ deno task generate
 
 ### Test
 
+テストを実行するためプロジェクトルートに `.env` を作成し、API IDとAffiliate
+IDを設定してください。
+
+```ini
+# .env
+DMM_API_ID=YOUR_API_ID
+DMM_AFFILIATE_ID=YOUR_AFFILIATE_ID
+```
+
+テストは以下のコマンドで実行します。
+
 ```shell
 deno test -A
 ```
