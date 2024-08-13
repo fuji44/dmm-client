@@ -69,7 +69,7 @@ import {
  * @param requestAdapter The request adapter to use to execute the requests.
  */
 // @ts-ignore
-export function createDMMClient(requestAdapter: RequestAdapter) {
+export function createDMMClient(requestAdapter: RequestAdapter): DMMClient {
   registerDefaultSerializer(JsonSerializationWriterFactory);
   registerDefaultSerializer(TextSerializationWriterFactory);
   registerDefaultSerializer(FormSerializationWriterFactory);

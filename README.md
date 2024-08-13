@@ -1,9 +1,10 @@
-# DMM client
+# DMM Client
 
-DMMアフェリエイトのWebサービスの非公式TypeScriptクライアント。
-クライアントコードは[Kiota](https://github.com/microsoft/kiota)で生成しています。
-基となるOpenAPI
-Specは、[公式リファレンス](https://affiliate.dmm.com/api/)と実際のAPIの動作をもとに独自に作成しています。
+An unofficial TypeScript client for the DMM Affiliate web service. The client
+code is generated using [Kiota](https://github.com/microsoft/kiota). The
+underlying OpenAPI Spec is independently created based on the
+[official reference](https://affiliate.dmm.com/api/) and the actual behavior of
+the API.
 
 ## Development
 
@@ -15,8 +16,8 @@ deno task generate
 
 ### Test
 
-テストを実行するためプロジェクトルートに `.env` を作成し、API IDとAffiliate
-IDを設定してください。
+To run the tests, create a `.env` file at the project root and set the API ID
+and Affiliate ID.
 
 ```ini
 # .env
@@ -24,7 +25,7 @@ DMM_API_ID=YOUR_API_ID
 DMM_AFFILIATE_ID=YOUR_AFFILIATE_ID
 ```
 
-テストは以下のコマンドで実行します。
+Run the tests with the following command:
 
 ```shell
 deno test -A

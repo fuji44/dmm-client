@@ -1,4 +1,18 @@
 {
+  "name": "@fuji44/dmm-client",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
+  "publish": {
+    "include": [
+      "LICENSE",
+      "README.md",
+      "client/**/*",
+      "docs/",
+      "kiota/",
+      "mod.ts",
+      "spec/"
+    ]
+  },
   "lock": false,
   "imports": {
     "@microsoft/kiota-abstractions": "npm:@microsoft/kiota-abstractions@^1.0.0-preview.59",
