@@ -5,23 +5,18 @@
  * - DMM_API_ID: The API ID for accessing the DMM API.
  * - DMM_AFFILIATE_ID: The affiliate ID for tracking affiliate referrals.
  */
-import { load } from "@std/dotenv";
-import { FetchRequestAdapter } from "npm:@microsoft/kiota-http-fetchlibrary@1.0.0-preview.58";
+import { FetchRequestAdapter } from "@microsoft/kiota-http-fetchlibrary";
 import {
   ApiKeyLocation,
   createDMMClient,
   MultiApiKeyAuthenticationProvider,
-} from "jsr:@fuji44/dmm-client";
+} from "@fuji44/dmm-client";
 
-await load({
-  envPath: "../.env",
-  export: true,
-});
-const apiId = Deno.env.get("DMM_API_ID");
+const apiId = process.env.DMM_API_ID;
 if (!apiId) {
   throw new Error("environment variable DMM_API_ID is not set");
 }
-const affiliateId = Deno.env.get("DMM_AFFILIATE_ID");
+const affiliateId = process.env.DMM_AFFILIATE_ID;
 if (!affiliateId) {
   throw new Error("environment variable DMM_AFFILIATE_ID is not set");
 }

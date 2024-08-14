@@ -1,5 +1,8 @@
 {
   "deno.enable": true,
+  "deno.disablePaths": [
+    "examples/nodejs"
+  ],
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },

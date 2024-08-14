@@ -1,0 +1,14 @@
+{
+  "name": "dmm-client-example-for-nodejs",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^22.2.0",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@fuji44/dmm-client": "npm:@jsr/fuji44__dmm-client@^0.1.1",
+    "@microsoft/kiota-http-fetchlibrary": "^1.0.0-preview.58"
+  }
+}
