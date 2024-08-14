@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "@fuji44/dmm-client": "npm:@jsr/fuji44__dmm-client@^0.1.1",
-    "@microsoft/kiota-http-fetchlibrary": "^1.0.0-preview.58"
+    "@microsoft/kiota-http-fetchlibrary": "1.0.0-preview.58"
   }
 }
