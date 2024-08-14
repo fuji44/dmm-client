@@ -2,8 +2,10 @@
 
 DMMアフェリエイトのWebサービスの非公式TypeScriptクライアント。
 クライアントコードは[Kiota](https://github.com/microsoft/kiota)で生成しています。
-基となるOpenAPI
-Specは、[公式リファレンス](https://affiliate.dmm.com/api/)と実際のAPIの動作をもとに独自に作成しています。
+基となるOpenAPI Specは、[公式リファレンス](https://affiliate.dmm.com/api/)と実際のAPIの動作をもとに独自に作成しています。
+
+> [!WARNING]
+> kiota-typescriptはpreviewバージョンのため、kiota関連パッケージのバージョンアップによって動作しなくなる可能性があります。
 
 ## Usage
 
@@ -60,8 +62,7 @@ deno task generate
 
 ### Test
 
-テストを実行するためプロジェクトルートに `.env` を作成し、API IDとAffiliate
-IDを設定してください。
+テストを実行するためプロジェクトルートに `.env` を作成し、API IDとAffiliate IDを設定してください。
 
 ```ini
 # .env

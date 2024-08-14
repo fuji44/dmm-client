@@ -1,10 +1,9 @@
 # DMM Client
 
-An unofficial TypeScript client for the DMM web service. The client code is
-generated using [Kiota](https://github.com/microsoft/kiota). The underlying
-OpenAPI Spec is independently created based on the
-[official reference](https://affiliate.dmm.com/api/) and the actual behavior of
-the API.
+An unofficial TypeScript client for the DMM web service. The client code is generated using [Kiota](https://github.com/microsoft/kiota). The underlying OpenAPI Spec is independently created based on the [official reference](https://affiliate.dmm.com/api/) and the actual behavior of the API.
+
+> [!WARNING]
+> Since kiota-typescript is a preview version, it may stop working when kiota-related packages are upgraded.
 
 ## Usage
 
@@ -61,8 +60,7 @@ deno task generate
 
 ### Test
 
-To run the tests, create a `.env` file at the project root and set the API ID
-and Affiliate ID.
+To run the tests, create a `.env` file at the project root and set the API ID and Affiliate ID.
 
 ```ini
 # .env
