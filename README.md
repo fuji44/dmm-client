@@ -1,8 +1,8 @@
 # DMM Client
 
-An unofficial TypeScript client for the DMM Affiliate web service. The client
-code is generated using [Kiota](https://github.com/microsoft/kiota). The
-underlying OpenAPI Spec is independently created based on the
+An unofficial TypeScript client for the DMM web service. The client code is
+generated using [Kiota](https://github.com/microsoft/kiota). The underlying
+OpenAPI Spec is independently created based on the
 [official reference](https://affiliate.dmm.com/api/) and the actual behavior of
 the API.
 
@@ -16,7 +16,7 @@ Add this package and the `kiota-http-fetchlibrary` as dependencies.
 deno add @fuji44/dmm-client npm:@microsoft/kiota-http-fetchlibrary@^1.0.0-preview.58
 ```
 
-Follow the Kiota conventions for coding.
+Coding is the same as for general Kiota client usage.
 
 ```ts
 import { FetchRequestAdapter } from "@microsoft/kiota-http-fetchlibrary";
