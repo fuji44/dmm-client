@@ -30,6 +30,6 @@
     ]
   },
   "tasks": {
-    "generate": "kiota generate -l typescript -d ./spec/dmm.oas.yaml -c DMMClient -n DMMSDK -o ./client && deno run --allow-read --allow-write ./scripts/postKiotaGenerate.ts && deno fmt"
+    "generate": "kiota generate -l typescript -d ./spec/dmm.oas.yaml -c DMMClient -n DMMSDK -o ./client && deno run --allow-read --allow-write ./scripts/postKiotaGenerate.ts && deno fmt ./client"
   }
 }
