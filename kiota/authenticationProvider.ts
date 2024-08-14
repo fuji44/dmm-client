@@ -1,6 +1,6 @@
 import {
   AllowedHostsValidator,
-  AuthenticationProvider,
+  type AuthenticationProvider,
   type RequestInformation,
   validateProtocol,
 } from "@microsoft/kiota-abstractions";
