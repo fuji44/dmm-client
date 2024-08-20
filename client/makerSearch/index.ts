@@ -231,11 +231,11 @@ export interface MakerSearchGetResponse extends AdditionalDataHolder, Parsable {
   /**
    * The request property
    */
-  request?: MakerSearchGetResponse_request;
+  request?: MakerSearchGetResponse_request | null;
   /**
    * The result property
    */
-  result?: MakerSearchGetResponse_result;
+  result?: MakerSearchGetResponse_result | null;
 }
 export interface MakerSearchGetResponse_request
   extends AdditionalDataHolder, Parsable {
@@ -246,7 +246,7 @@ export interface MakerSearchGetResponse_request
   /**
    * The parameters property
    */
-  parameters?: MakerSearchGetResponse_request_parameters;
+  parameters?: MakerSearchGetResponse_request_parameters | null;
 }
 export interface MakerSearchGetResponse_request_parameters
   extends AdditionalDataHolder, Parsable {
@@ -257,27 +257,27 @@ export interface MakerSearchGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string;
+  affiliate_id?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string;
+  api_id?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string;
+  floor_id?: string | null;
   /**
    * The hits property
    */
-  hits?: string;
+  hits?: string | null;
   /**
    * The offset property
    */
-  offset?: string;
+  offset?: string | null;
   /**
    * The output property
    */
-  output?: string;
+  output?: string | null;
 }
 export interface MakerSearchGetResponse_result
   extends AdditionalDataHolder, Parsable {
@@ -288,51 +288,51 @@ export interface MakerSearchGetResponse_result
   /**
    * The first_position property
    */
-  first_position?: number;
+  first_position?: number | null;
   /**
    * The floor_code property
    */
-  floor_code?: string;
+  floor_code?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string;
+  floor_id?: string | null;
   /**
    * The floor_name property
    */
-  floor_name?: string;
+  floor_name?: string | null;
   /**
    * The maker property
    */
-  maker?: MakerSearchGetResponse_result_maker[];
+  maker?: MakerSearchGetResponse_result_maker[] | null;
   /**
    * The result_count property
    */
-  result_count?: number;
+  result_count?: number | null;
   /**
    * The service_code property
    */
-  service_code?: string;
+  service_code?: string | null;
   /**
    * The service_name property
    */
-  service_name?: string;
+  service_name?: string | null;
   /**
    * The site_code property
    */
-  site_code?: string;
+  site_code?: string | null;
   /**
    * The site_name property
    */
-  site_name?: string;
+  site_name?: string | null;
   /**
    * The status property
    */
-  status?: string;
+  status?: string | null;
   /**
    * The total_count property
    */
-  total_count?: string;
+  total_count?: string | null;
 }
 export interface MakerSearchGetResponse_result_maker
   extends AdditionalDataHolder, Parsable {
@@ -343,19 +343,19 @@ export interface MakerSearchGetResponse_result_maker
   /**
    * The list_url property
    */
-  list_url?: string;
+  list_url?: string | null;
   /**
    * The maker_id property
    */
-  maker_id?: string;
+  maker_id?: string | null;
   /**
    * The name property
    */
-  name?: string;
+  name?: string | null;
   /**
    * The ruby property
    */
-  ruby?: string;
+  ruby?: string | null;
 }
 /**
  * Builds and executes requests for operations under /MakerSearch
@@ -419,19 +419,22 @@ export interface MakerSearchRequestBuilderGetQueryParameters {
 // @ts-ignore
 export function serializeMakerSearchGetResponse(
   writer: SerializationWriter,
-  makerSearchGetResponse: Partial<MakerSearchGetResponse> | undefined = {},
+  makerSearchGetResponse: Partial<MakerSearchGetResponse> | undefined | null =
+    {},
 ): void {
-  writer.writeObjectValue<MakerSearchGetResponse_request>(
-    "request",
-    makerSearchGetResponse.request,
-    serializeMakerSearchGetResponse_request,
-  );
-  writer.writeObjectValue<MakerSearchGetResponse_result>(
-    "result",
-    makerSearchGetResponse.result,
-    serializeMakerSearchGetResponse_result,
-  );
-  writer.writeAdditionalData(makerSearchGetResponse.additionalData);
+  if (makerSearchGetResponse) {
+    writer.writeObjectValue<MakerSearchGetResponse_request>(
+      "request",
+      makerSearchGetResponse.request,
+      serializeMakerSearchGetResponse_request,
+    );
+    writer.writeObjectValue<MakerSearchGetResponse_result>(
+      "result",
+      makerSearchGetResponse.result,
+      serializeMakerSearchGetResponse_result,
+    );
+    writer.writeAdditionalData(makerSearchGetResponse.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -442,14 +445,17 @@ export function serializeMakerSearchGetResponse_request(
   writer: SerializationWriter,
   makerSearchGetResponse_request:
     | Partial<MakerSearchGetResponse_request>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeObjectValue<MakerSearchGetResponse_request_parameters>(
-    "parameters",
-    makerSearchGetResponse_request.parameters,
-    serializeMakerSearchGetResponse_request_parameters,
-  );
-  writer.writeAdditionalData(makerSearchGetResponse_request.additionalData);
+  if (makerSearchGetResponse_request) {
+    writer.writeObjectValue<MakerSearchGetResponse_request_parameters>(
+      "parameters",
+      makerSearchGetResponse_request.parameters,
+      serializeMakerSearchGetResponse_request_parameters,
+    );
+    writer.writeAdditionalData(makerSearchGetResponse_request.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -460,35 +466,38 @@ export function serializeMakerSearchGetResponse_request_parameters(
   writer: SerializationWriter,
   makerSearchGetResponse_request_parameters:
     | Partial<MakerSearchGetResponse_request_parameters>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "affiliate_id",
-    makerSearchGetResponse_request_parameters.affiliate_id,
-  );
-  writer.writeStringValue(
-    "api_id",
-    makerSearchGetResponse_request_parameters.api_id,
-  );
-  writer.writeStringValue(
-    "floor_id",
-    makerSearchGetResponse_request_parameters.floor_id,
-  );
-  writer.writeStringValue(
-    "hits",
-    makerSearchGetResponse_request_parameters.hits,
-  );
-  writer.writeStringValue(
-    "offset",
-    makerSearchGetResponse_request_parameters.offset,
-  );
-  writer.writeStringValue(
-    "output",
-    makerSearchGetResponse_request_parameters.output,
-  );
-  writer.writeAdditionalData(
-    makerSearchGetResponse_request_parameters.additionalData,
-  );
+  if (makerSearchGetResponse_request_parameters) {
+    writer.writeStringValue(
+      "affiliate_id",
+      makerSearchGetResponse_request_parameters.affiliate_id,
+    );
+    writer.writeStringValue(
+      "api_id",
+      makerSearchGetResponse_request_parameters.api_id,
+    );
+    writer.writeStringValue(
+      "floor_id",
+      makerSearchGetResponse_request_parameters.floor_id,
+    );
+    writer.writeStringValue(
+      "hits",
+      makerSearchGetResponse_request_parameters.hits,
+    );
+    writer.writeStringValue(
+      "offset",
+      makerSearchGetResponse_request_parameters.offset,
+    );
+    writer.writeStringValue(
+      "output",
+      makerSearchGetResponse_request_parameters.output,
+    );
+    writer.writeAdditionalData(
+      makerSearchGetResponse_request_parameters.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -499,46 +508,55 @@ export function serializeMakerSearchGetResponse_result(
   writer: SerializationWriter,
   makerSearchGetResponse_result:
     | Partial<MakerSearchGetResponse_result>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "first_position",
-    makerSearchGetResponse_result.first_position,
-  );
-  writer.writeStringValue(
-    "floor_code",
-    makerSearchGetResponse_result.floor_code,
-  );
-  writer.writeStringValue("floor_id", makerSearchGetResponse_result.floor_id);
-  writer.writeStringValue(
-    "floor_name",
-    makerSearchGetResponse_result.floor_name,
-  );
-  writer.writeCollectionOfObjectValues<MakerSearchGetResponse_result_maker>(
-    "maker",
-    makerSearchGetResponse_result.maker,
-    serializeMakerSearchGetResponse_result_maker,
-  );
-  writer.writeNumberValue(
-    "result_count",
-    makerSearchGetResponse_result.result_count,
-  );
-  writer.writeStringValue(
-    "service_code",
-    makerSearchGetResponse_result.service_code,
-  );
-  writer.writeStringValue(
-    "service_name",
-    makerSearchGetResponse_result.service_name,
-  );
-  writer.writeStringValue("site_code", makerSearchGetResponse_result.site_code);
-  writer.writeStringValue("site_name", makerSearchGetResponse_result.site_name);
-  writer.writeStringValue("status", makerSearchGetResponse_result.status);
-  writer.writeStringValue(
-    "total_count",
-    makerSearchGetResponse_result.total_count,
-  );
-  writer.writeAdditionalData(makerSearchGetResponse_result.additionalData);
+  if (makerSearchGetResponse_result) {
+    writer.writeNumberValue(
+      "first_position",
+      makerSearchGetResponse_result.first_position,
+    );
+    writer.writeStringValue(
+      "floor_code",
+      makerSearchGetResponse_result.floor_code,
+    );
+    writer.writeStringValue("floor_id", makerSearchGetResponse_result.floor_id);
+    writer.writeStringValue(
+      "floor_name",
+      makerSearchGetResponse_result.floor_name,
+    );
+    writer.writeCollectionOfObjectValues<MakerSearchGetResponse_result_maker>(
+      "maker",
+      makerSearchGetResponse_result.maker,
+      serializeMakerSearchGetResponse_result_maker,
+    );
+    writer.writeNumberValue(
+      "result_count",
+      makerSearchGetResponse_result.result_count,
+    );
+    writer.writeStringValue(
+      "service_code",
+      makerSearchGetResponse_result.service_code,
+    );
+    writer.writeStringValue(
+      "service_name",
+      makerSearchGetResponse_result.service_name,
+    );
+    writer.writeStringValue(
+      "site_code",
+      makerSearchGetResponse_result.site_code,
+    );
+    writer.writeStringValue(
+      "site_name",
+      makerSearchGetResponse_result.site_name,
+    );
+    writer.writeStringValue("status", makerSearchGetResponse_result.status);
+    writer.writeStringValue(
+      "total_count",
+      makerSearchGetResponse_result.total_count,
+    );
+    writer.writeAdditionalData(makerSearchGetResponse_result.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -549,21 +567,24 @@ export function serializeMakerSearchGetResponse_result_maker(
   writer: SerializationWriter,
   makerSearchGetResponse_result_maker:
     | Partial<MakerSearchGetResponse_result_maker>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "list_url",
-    makerSearchGetResponse_result_maker.list_url,
-  );
-  writer.writeStringValue(
-    "maker_id",
-    makerSearchGetResponse_result_maker.maker_id,
-  );
-  writer.writeStringValue("name", makerSearchGetResponse_result_maker.name);
-  writer.writeStringValue("ruby", makerSearchGetResponse_result_maker.ruby);
-  writer.writeAdditionalData(
-    makerSearchGetResponse_result_maker.additionalData,
-  );
+  if (makerSearchGetResponse_result_maker) {
+    writer.writeStringValue(
+      "list_url",
+      makerSearchGetResponse_result_maker.list_url,
+    );
+    writer.writeStringValue(
+      "maker_id",
+      makerSearchGetResponse_result_maker.maker_id,
+    );
+    writer.writeStringValue("name", makerSearchGetResponse_result_maker.name);
+    writer.writeStringValue("ruby", makerSearchGetResponse_result_maker.ruby);
+    writer.writeAdditionalData(
+      makerSearchGetResponse_result_maker.additionalData,
+    );
+  }
 }
 /**
  * Uri template for the request builder.

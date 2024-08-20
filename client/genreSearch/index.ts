@@ -230,11 +230,11 @@ export interface GenreSearchGetResponse extends AdditionalDataHolder, Parsable {
   /**
    * The request property
    */
-  request?: GenreSearchGetResponse_request;
+  request?: GenreSearchGetResponse_request | null;
   /**
    * The result property
    */
-  result?: GenreSearchGetResponse_result;
+  result?: GenreSearchGetResponse_result | null;
 }
 export interface GenreSearchGetResponse_request
   extends AdditionalDataHolder, Parsable {
@@ -245,7 +245,7 @@ export interface GenreSearchGetResponse_request
   /**
    * The parameters property
    */
-  parameters?: GenreSearchGetResponse_request_parameters;
+  parameters?: GenreSearchGetResponse_request_parameters | null;
 }
 export interface GenreSearchGetResponse_request_parameters
   extends AdditionalDataHolder, Parsable {
@@ -256,31 +256,31 @@ export interface GenreSearchGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string;
+  affiliate_id?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string;
+  api_id?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string;
+  floor_id?: string | null;
   /**
    * The hits property
    */
-  hits?: string;
+  hits?: string | null;
   /**
    * The initial property
    */
-  initial?: string;
+  initial?: string | null;
   /**
    * The offset property
    */
-  offset?: string;
+  offset?: string | null;
   /**
    * The output property
    */
-  output?: string;
+  output?: string | null;
 }
 export interface GenreSearchGetResponse_result
   extends AdditionalDataHolder, Parsable {
@@ -291,51 +291,51 @@ export interface GenreSearchGetResponse_result
   /**
    * The first_position property
    */
-  first_position?: number;
+  first_position?: number | null;
   /**
    * The floor_code property
    */
-  floor_code?: string;
+  floor_code?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string;
+  floor_id?: string | null;
   /**
    * The floor_name property
    */
-  floor_name?: string;
+  floor_name?: string | null;
   /**
    * The genre property
    */
-  genre?: GenreSearchGetResponse_result_genre[];
+  genre?: GenreSearchGetResponse_result_genre[] | null;
   /**
    * The result_count property
    */
-  result_count?: number;
+  result_count?: number | null;
   /**
    * The service_code property
    */
-  service_code?: string;
+  service_code?: string | null;
   /**
    * The service_name property
    */
-  service_name?: string;
+  service_name?: string | null;
   /**
    * The site_code property
    */
-  site_code?: string;
+  site_code?: string | null;
   /**
    * The site_name property
    */
-  site_name?: string;
+  site_name?: string | null;
   /**
    * The status property
    */
-  status?: string;
+  status?: string | null;
   /**
    * The total_count property
    */
-  total_count?: string;
+  total_count?: string | null;
 }
 export interface GenreSearchGetResponse_result_genre
   extends AdditionalDataHolder, Parsable {
@@ -346,19 +346,19 @@ export interface GenreSearchGetResponse_result_genre
   /**
    * The genre_id property
    */
-  genre_id?: string;
+  genre_id?: string | null;
   /**
    * The list_url property
    */
-  list_url?: string;
+  list_url?: string | null;
   /**
    * The name property
    */
-  name?: string;
+  name?: string | null;
   /**
    * The ruby property
    */
-  ruby?: string;
+  ruby?: string | null;
 }
 /**
  * Builds and executes requests for operations under /GenreSearch
@@ -426,19 +426,22 @@ export type GetOutputQueryParameterType =
 // @ts-ignore
 export function serializeGenreSearchGetResponse(
   writer: SerializationWriter,
-  genreSearchGetResponse: Partial<GenreSearchGetResponse> | undefined = {},
+  genreSearchGetResponse: Partial<GenreSearchGetResponse> | undefined | null =
+    {},
 ): void {
-  writer.writeObjectValue<GenreSearchGetResponse_request>(
-    "request",
-    genreSearchGetResponse.request,
-    serializeGenreSearchGetResponse_request,
-  );
-  writer.writeObjectValue<GenreSearchGetResponse_result>(
-    "result",
-    genreSearchGetResponse.result,
-    serializeGenreSearchGetResponse_result,
-  );
-  writer.writeAdditionalData(genreSearchGetResponse.additionalData);
+  if (genreSearchGetResponse) {
+    writer.writeObjectValue<GenreSearchGetResponse_request>(
+      "request",
+      genreSearchGetResponse.request,
+      serializeGenreSearchGetResponse_request,
+    );
+    writer.writeObjectValue<GenreSearchGetResponse_result>(
+      "result",
+      genreSearchGetResponse.result,
+      serializeGenreSearchGetResponse_result,
+    );
+    writer.writeAdditionalData(genreSearchGetResponse.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -449,14 +452,17 @@ export function serializeGenreSearchGetResponse_request(
   writer: SerializationWriter,
   genreSearchGetResponse_request:
     | Partial<GenreSearchGetResponse_request>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeObjectValue<GenreSearchGetResponse_request_parameters>(
-    "parameters",
-    genreSearchGetResponse_request.parameters,
-    serializeGenreSearchGetResponse_request_parameters,
-  );
-  writer.writeAdditionalData(genreSearchGetResponse_request.additionalData);
+  if (genreSearchGetResponse_request) {
+    writer.writeObjectValue<GenreSearchGetResponse_request_parameters>(
+      "parameters",
+      genreSearchGetResponse_request.parameters,
+      serializeGenreSearchGetResponse_request_parameters,
+    );
+    writer.writeAdditionalData(genreSearchGetResponse_request.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -467,39 +473,42 @@ export function serializeGenreSearchGetResponse_request_parameters(
   writer: SerializationWriter,
   genreSearchGetResponse_request_parameters:
     | Partial<GenreSearchGetResponse_request_parameters>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "affiliate_id",
-    genreSearchGetResponse_request_parameters.affiliate_id,
-  );
-  writer.writeStringValue(
-    "api_id",
-    genreSearchGetResponse_request_parameters.api_id,
-  );
-  writer.writeStringValue(
-    "floor_id",
-    genreSearchGetResponse_request_parameters.floor_id,
-  );
-  writer.writeStringValue(
-    "hits",
-    genreSearchGetResponse_request_parameters.hits,
-  );
-  writer.writeStringValue(
-    "initial",
-    genreSearchGetResponse_request_parameters.initial,
-  );
-  writer.writeStringValue(
-    "offset",
-    genreSearchGetResponse_request_parameters.offset,
-  );
-  writer.writeStringValue(
-    "output",
-    genreSearchGetResponse_request_parameters.output,
-  );
-  writer.writeAdditionalData(
-    genreSearchGetResponse_request_parameters.additionalData,
-  );
+  if (genreSearchGetResponse_request_parameters) {
+    writer.writeStringValue(
+      "affiliate_id",
+      genreSearchGetResponse_request_parameters.affiliate_id,
+    );
+    writer.writeStringValue(
+      "api_id",
+      genreSearchGetResponse_request_parameters.api_id,
+    );
+    writer.writeStringValue(
+      "floor_id",
+      genreSearchGetResponse_request_parameters.floor_id,
+    );
+    writer.writeStringValue(
+      "hits",
+      genreSearchGetResponse_request_parameters.hits,
+    );
+    writer.writeStringValue(
+      "initial",
+      genreSearchGetResponse_request_parameters.initial,
+    );
+    writer.writeStringValue(
+      "offset",
+      genreSearchGetResponse_request_parameters.offset,
+    );
+    writer.writeStringValue(
+      "output",
+      genreSearchGetResponse_request_parameters.output,
+    );
+    writer.writeAdditionalData(
+      genreSearchGetResponse_request_parameters.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -510,46 +519,55 @@ export function serializeGenreSearchGetResponse_result(
   writer: SerializationWriter,
   genreSearchGetResponse_result:
     | Partial<GenreSearchGetResponse_result>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "first_position",
-    genreSearchGetResponse_result.first_position,
-  );
-  writer.writeStringValue(
-    "floor_code",
-    genreSearchGetResponse_result.floor_code,
-  );
-  writer.writeStringValue("floor_id", genreSearchGetResponse_result.floor_id);
-  writer.writeStringValue(
-    "floor_name",
-    genreSearchGetResponse_result.floor_name,
-  );
-  writer.writeCollectionOfObjectValues<GenreSearchGetResponse_result_genre>(
-    "genre",
-    genreSearchGetResponse_result.genre,
-    serializeGenreSearchGetResponse_result_genre,
-  );
-  writer.writeNumberValue(
-    "result_count",
-    genreSearchGetResponse_result.result_count,
-  );
-  writer.writeStringValue(
-    "service_code",
-    genreSearchGetResponse_result.service_code,
-  );
-  writer.writeStringValue(
-    "service_name",
-    genreSearchGetResponse_result.service_name,
-  );
-  writer.writeStringValue("site_code", genreSearchGetResponse_result.site_code);
-  writer.writeStringValue("site_name", genreSearchGetResponse_result.site_name);
-  writer.writeStringValue("status", genreSearchGetResponse_result.status);
-  writer.writeStringValue(
-    "total_count",
-    genreSearchGetResponse_result.total_count,
-  );
-  writer.writeAdditionalData(genreSearchGetResponse_result.additionalData);
+  if (genreSearchGetResponse_result) {
+    writer.writeNumberValue(
+      "first_position",
+      genreSearchGetResponse_result.first_position,
+    );
+    writer.writeStringValue(
+      "floor_code",
+      genreSearchGetResponse_result.floor_code,
+    );
+    writer.writeStringValue("floor_id", genreSearchGetResponse_result.floor_id);
+    writer.writeStringValue(
+      "floor_name",
+      genreSearchGetResponse_result.floor_name,
+    );
+    writer.writeCollectionOfObjectValues<GenreSearchGetResponse_result_genre>(
+      "genre",
+      genreSearchGetResponse_result.genre,
+      serializeGenreSearchGetResponse_result_genre,
+    );
+    writer.writeNumberValue(
+      "result_count",
+      genreSearchGetResponse_result.result_count,
+    );
+    writer.writeStringValue(
+      "service_code",
+      genreSearchGetResponse_result.service_code,
+    );
+    writer.writeStringValue(
+      "service_name",
+      genreSearchGetResponse_result.service_name,
+    );
+    writer.writeStringValue(
+      "site_code",
+      genreSearchGetResponse_result.site_code,
+    );
+    writer.writeStringValue(
+      "site_name",
+      genreSearchGetResponse_result.site_name,
+    );
+    writer.writeStringValue("status", genreSearchGetResponse_result.status);
+    writer.writeStringValue(
+      "total_count",
+      genreSearchGetResponse_result.total_count,
+    );
+    writer.writeAdditionalData(genreSearchGetResponse_result.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -560,21 +578,24 @@ export function serializeGenreSearchGetResponse_result_genre(
   writer: SerializationWriter,
   genreSearchGetResponse_result_genre:
     | Partial<GenreSearchGetResponse_result_genre>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "genre_id",
-    genreSearchGetResponse_result_genre.genre_id,
-  );
-  writer.writeStringValue(
-    "list_url",
-    genreSearchGetResponse_result_genre.list_url,
-  );
-  writer.writeStringValue("name", genreSearchGetResponse_result_genre.name);
-  writer.writeStringValue("ruby", genreSearchGetResponse_result_genre.ruby);
-  writer.writeAdditionalData(
-    genreSearchGetResponse_result_genre.additionalData,
-  );
+  if (genreSearchGetResponse_result_genre) {
+    writer.writeStringValue(
+      "genre_id",
+      genreSearchGetResponse_result_genre.genre_id,
+    );
+    writer.writeStringValue(
+      "list_url",
+      genreSearchGetResponse_result_genre.list_url,
+    );
+    writer.writeStringValue("name", genreSearchGetResponse_result_genre.name);
+    writer.writeStringValue("ruby", genreSearchGetResponse_result_genre.ruby);
+    writer.writeAdditionalData(
+      genreSearchGetResponse_result_genre.additionalData,
+    );
+  }
 }
 /**
  * Uri template for the request builder.

@@ -1205,11 +1205,11 @@ export interface ItemListGetResponse extends AdditionalDataHolder, Parsable {
   /**
    * The request property
    */
-  request?: ItemListGetResponse_request;
+  request?: ItemListGetResponse_request | null;
   /**
    * The result property
    */
-  result?: ItemListGetResponse_result;
+  result?: ItemListGetResponse_result | null;
 }
 export interface ItemListGetResponse_request
   extends AdditionalDataHolder, Parsable {
@@ -1220,7 +1220,7 @@ export interface ItemListGetResponse_request
   /**
    * The parameters property
    */
-  parameters?: ItemListGetResponse_request_parameters;
+  parameters?: ItemListGetResponse_request_parameters | null;
 }
 export interface ItemListGetResponse_request_parameters
   extends AdditionalDataHolder, Parsable {
@@ -1231,27 +1231,27 @@ export interface ItemListGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string;
+  affiliate_id?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string;
+  api_id?: string | null;
   /**
    * The floor property
    */
-  floor?: string;
+  floor?: string | null;
   /**
    * The keyword property
    */
-  keyword?: string;
+  keyword?: string | null;
   /**
    * The service property
    */
-  service?: string;
+  service?: string | null;
   /**
    * The site property
    */
-  site?: string;
+  site?: string | null;
 }
 export interface ItemListGetResponse_result
   extends AdditionalDataHolder, Parsable {
@@ -1262,23 +1262,23 @@ export interface ItemListGetResponse_result
   /**
    * 検索開始位置
    */
-  first_position?: number;
+  first_position?: number | null;
   /**
    * 商品情報
    */
-  items?: ItemListGetResponse_result_items[];
+  items?: ItemListGetResponse_result_items[] | null;
   /**
    * 取得件数
    */
-  result_count?: number;
+  result_count?: number | null;
   /**
    * ステータスコード
    */
-  status?: number;
+  status?: number | null;
   /**
    * 全体件数
    */
-  total_count?: number;
+  total_count?: number | null;
 }
 export interface ItemListGetResponse_result_items
   extends AdditionalDataHolder, Parsable {
@@ -1289,111 +1289,111 @@ export interface ItemListGetResponse_result_items
   /**
    * アフィリエイトリンクURL
    */
-  affiliateURL?: string;
+  affiliateURL?: string | null;
   /**
    * キャンペーン情報
    */
-  campaign?: ItemListGetResponse_result_items_campaign;
+  campaign?: ItemListGetResponse_result_items_campaign | null;
   /**
    * カテゴリ名
    */
-  category_name?: string;
+  category_name?: string | null;
   /**
    * CD情報
    */
-  cdinfo?: ItemListGetResponse_result_items_cdinfo;
+  cdinfo?: ItemListGetResponse_result_items_cdinfo | null;
   /**
    * 商品ID
    */
-  content_id?: string;
+  content_id?: string | null;
   /**
    * 発売日、配信開始日、貸出開始日
    */
-  date?: string;
+  date?: string | null;
   /**
    * パンくずリスト
    */
-  directory?: ItemListGetResponse_result_items_directory;
+  directory?: ItemListGetResponse_result_items_directory | null;
   /**
    * フロアコード
    */
-  floor_code?: string;
+  floor_code?: string | null;
   /**
    * フロア名
    */
-  floor_name?: string;
+  floor_name?: string | null;
   /**
    * 画像URL
    */
-  imageURL?: ItemListGetResponse_result_items_imageURL;
+  imageURL?: ItemListGetResponse_result_items_imageURL | null;
   /**
    * ISBN
    */
-  isbn?: string;
+  isbn?: string | null;
   /**
    * 商品詳細
    */
-  iteminfo?: ItemListGetResponse_result_items_iteminfo;
+  iteminfo?: ItemListGetResponse_result_items_iteminfo | null;
   /**
    * JANコード
    */
-  jancode?: string;
+  jancode?: string | null;
   /**
    * メーカー品番
    */
-  maker_product?: string;
+  maker_product?: string | null;
   /**
    * 巻数
    */
-  number?: string;
+  number?: string | null;
   /**
    * 価格
    */
-  prices?: ItemListGetResponse_result_items_prices;
+  prices?: ItemListGetResponse_result_items_prices | null;
   /**
    * 品番
    */
-  product_id?: string;
+  product_id?: string | null;
   /**
    * レビュー平均点
    */
-  review?: ItemListGetResponse_result_items_review;
+  review?: ItemListGetResponse_result_items_review | null;
   /**
    * サンプル画像URL
    */
-  sampleImageURL?: ItemListGetResponse_result_items_sampleImageURL;
+  sampleImageURL?: ItemListGetResponse_result_items_sampleImageURL | null;
   /**
    * サンプル動画URL
    */
-  sampleMovieURL?: ItemListGetResponse_result_items_sampleMovieURL;
+  sampleMovieURL?: ItemListGetResponse_result_items_sampleMovieURL | null;
   /**
    * サービスコード
    */
-  service_code?: string;
+  service_code?: string | null;
   /**
    * サービス名
    */
-  service_name?: string;
+  service_name?: string | null;
   /**
    * 在庫状況
    */
-  stock?: string;
+  stock?: string | null;
   /**
    * The tachiyomi property
    */
-  tachiyomi?: ItemListGetResponse_result_items_tachiyomi;
+  tachiyomi?: ItemListGetResponse_result_items_tachiyomi | null;
   /**
    * タイトル
    */
-  title?: string;
+  title?: string | null;
   /**
    * 商品ページURL
    */
-  uRL?: string;
+  uRL?: string | null;
   /**
    * 収録時間 or ページ数
    */
-  volume?: string;
+  volume?: string | null;
 }
 /**
  * キャンペーン情報
@@ -1407,15 +1407,15 @@ export interface ItemListGetResponse_result_items_campaign
   /**
    * キャンペーン開始日時
    */
-  date_begin?: string;
+  date_begin?: string | null;
   /**
    * キャンペーン終了日時
    */
-  date_end?: string;
+  date_end?: string | null;
   /**
    * キャンペーンタイトル
    */
-  title?: string;
+  title?: string | null;
 }
 /**
  * CD情報
@@ -1429,7 +1429,7 @@ export interface ItemListGetResponse_result_items_cdinfo
   /**
    * アルバム、シングル
    */
-  kind?: string;
+  kind?: string | null;
 }
 /**
  * パンくずリスト
@@ -1443,11 +1443,11 @@ export interface ItemListGetResponse_result_items_directory
   /**
    * パンくずID
    */
-  id?: string;
+  id?: string | null;
   /**
    * パンくず名
    */
-  name?: string;
+  name?: string | null;
 }
 /**
  * 画像URL
@@ -1461,15 +1461,15 @@ export interface ItemListGetResponse_result_items_imageURL
   /**
    * 末端用（大）
    */
-  large?: string;
+  large?: string | null;
   /**
    * リストページ用
    */
-  list?: string;
+  list?: string | null;
   /**
    * 末端用（小）
    */
-  small?: string;
+  small?: string | null;
 }
 /**
  * 商品詳細
@@ -1479,11 +1479,11 @@ export interface ItemListGetResponse_result_items_iteminfo
   /**
    * 出演者（一般作品のみ）
    */
-  actor?: ItemListGetResponse_result_items_iteminfo_actor[];
+  actor?: ItemListGetResponse_result_items_iteminfo_actor[] | null;
   /**
    * 女優（アダルト作品のみ）
    */
-  actress?: ItemListGetResponse_result_items_iteminfo_actress[];
+  actress?: ItemListGetResponse_result_items_iteminfo_actress[] | null;
   /**
    * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
    */
@@ -1491,43 +1491,43 @@ export interface ItemListGetResponse_result_items_iteminfo
   /**
    * 作家、原作者、著者
    */
-  author?: ItemListGetResponse_result_items_iteminfo_author[];
+  author?: ItemListGetResponse_result_items_iteminfo_author[] | null;
   /**
    * カラー
    */
-  color?: ItemListGetResponse_result_items_iteminfo_color[];
+  color?: ItemListGetResponse_result_items_iteminfo_color[] | null;
   /**
    * 監督
    */
-  director?: ItemListGetResponse_result_items_iteminfo_director[];
+  director?: ItemListGetResponse_result_items_iteminfo_director[] | null;
   /**
    * ジャンル
    */
-  genre?: ItemListGetResponse_result_items_iteminfo_genre[];
+  genre?: ItemListGetResponse_result_items_iteminfo_genre[] | null;
   /**
    * レーベル
    */
-  label?: ItemListGetResponse_result_items_iteminfo_label[];
+  label?: ItemListGetResponse_result_items_iteminfo_label[] | null;
   /**
    * メーカー
    */
-  maker?: ItemListGetResponse_result_items_iteminfo_maker[];
+  maker?: ItemListGetResponse_result_items_iteminfo_maker[] | null;
   /**
    * 製作
    */
-  manufacture?: ItemListGetResponse_result_items_iteminfo_manufacture[];
+  manufacture?: ItemListGetResponse_result_items_iteminfo_manufacture[] | null;
   /**
    * シリーズ
    */
-  series?: ItemListGetResponse_result_items_iteminfo_series[];
+  series?: ItemListGetResponse_result_items_iteminfo_series[] | null;
   /**
    * サイズ
    */
-  size?: ItemListGetResponse_result_items_iteminfo_size[];
+  size?: ItemListGetResponse_result_items_iteminfo_size[] | null;
   /**
    * タイプ
    */
-  type?: ItemListGetResponse_result_items_iteminfo_type[];
+  type?: ItemListGetResponse_result_items_iteminfo_type[] | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_actor
   extends AdditionalDataHolder, Parsable {
@@ -1538,11 +1538,11 @@ export interface ItemListGetResponse_result_items_iteminfo_actor
   /**
    * 出演者ID
    */
-  id?: number;
+  id?: number | null;
   /**
    * 出演者名
    */
-  name?: string;
+  name?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_actress
   extends AdditionalDataHolder, Parsable {
@@ -1553,15 +1553,15 @@ export interface ItemListGetResponse_result_items_iteminfo_actress
   /**
    * 女優ID
    */
-  id?: number;
+  id?: number | null;
   /**
    * 女優名
    */
-  name?: string;
+  name?: string | null;
   /**
    * The ruby property
    */
-  ruby?: string;
+  ruby?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_author
   extends AdditionalDataHolder, Parsable {
@@ -1572,11 +1572,11 @@ export interface ItemListGetResponse_result_items_iteminfo_author
   /**
    * 作家、原作者、著者ID
    */
-  id?: number;
+  id?: number | null;
   /**
    * 作家、原作者、著者名
    */
-  name?: string;
+  name?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_color
   extends AdditionalDataHolder, Parsable {
@@ -1587,11 +1587,11 @@ export interface ItemListGetResponse_result_items_iteminfo_color
   /**
    * カラーID
    */
-  id?: number;
+  id?: number | null;
   /**
    * カラー名
    */
-  name?: string;
+  name?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_director
   extends AdditionalDataHolder, Parsable {
@@ -1602,15 +1602,15 @@ export interface ItemListGetResponse_result_items_iteminfo_director
   /**
    * 監督ID
    */
-  id?: number;
+  id?: number | null;
   /**
    * 監督名
    */
-  name?: string;
+  name?: string | null;
   /**
    * The ruby property
    */
-  ruby?: string;
+  ruby?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_genre
   extends AdditionalDataHolder, Parsable {
@@ -1621,11 +1621,11 @@ export interface ItemListGetResponse_result_items_iteminfo_genre
   /**
    * ジャンルID
    */
-  id?: number;
+  id?: number | null;
   /**
    * ジャンル名
    */
-  name?: string;
+  name?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_label
   extends AdditionalDataHolder, Parsable {
@@ -1636,11 +1636,11 @@ export interface ItemListGetResponse_result_items_iteminfo_label
   /**
    * レーベルID
    */
-  id?: number;
+  id?: number | null;
   /**
    * レーベル名
    */
-  name?: string;
+  name?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_maker
   extends AdditionalDataHolder, Parsable {
@@ -1651,11 +1651,11 @@ export interface ItemListGetResponse_result_items_iteminfo_maker
   /**
    * メーカーID
    */
-  id?: number;
+  id?: number | null;
   /**
    * メーカー名
    */
-  name?: string;
+  name?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_manufacture
   extends AdditionalDataHolder, Parsable {
@@ -1666,11 +1666,11 @@ export interface ItemListGetResponse_result_items_iteminfo_manufacture
   /**
    * ID
    */
-  id?: number;
+  id?: number | null;
   /**
    * 名前
    */
-  name?: string;
+  name?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_series
   extends AdditionalDataHolder, Parsable {
@@ -1681,11 +1681,11 @@ export interface ItemListGetResponse_result_items_iteminfo_series
   /**
    * シリーズID
    */
-  id?: number;
+  id?: number | null;
   /**
    * シリーズ名
    */
-  name?: string;
+  name?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_size
   extends AdditionalDataHolder, Parsable {
@@ -1696,11 +1696,11 @@ export interface ItemListGetResponse_result_items_iteminfo_size
   /**
    * サイズID
    */
-  id?: number;
+  id?: number | null;
   /**
    * サイズ名
    */
-  name?: string;
+  name?: string | null;
 }
 export interface ItemListGetResponse_result_items_iteminfo_type
   extends AdditionalDataHolder, Parsable {
@@ -1711,11 +1711,11 @@ export interface ItemListGetResponse_result_items_iteminfo_type
   /**
    * タイプID
    */
-  id?: number;
+  id?: number | null;
   /**
    * タイプ名
    */
-  name?: string;
+  name?: string | null;
 }
 /**
  * 価格
@@ -1729,15 +1729,15 @@ export interface ItemListGetResponse_result_items_prices
   /**
    * 配信リスト
    */
-  deliveries?: ItemListGetResponse_result_items_prices_deliveries;
+  deliveries?: ItemListGetResponse_result_items_prices_deliveries | null;
   /**
    * 定価
    */
-  list_price?: string;
+  list_price?: string | null;
   /**
    * 金額
    */
-  price?: string;
+  price?: string | null;
 }
 /**
  * 配信リスト
@@ -1751,7 +1751,9 @@ export interface ItemListGetResponse_result_items_prices_deliveries
   /**
    * 配信
    */
-  delivery?: ItemListGetResponse_result_items_prices_deliveries_delivery[];
+  delivery?:
+    | ItemListGetResponse_result_items_prices_deliveries_delivery[]
+    | null;
 }
 export interface ItemListGetResponse_result_items_prices_deliveries_delivery
   extends AdditionalDataHolder, Parsable {
@@ -1762,11 +1764,11 @@ export interface ItemListGetResponse_result_items_prices_deliveries_delivery
   /**
    * 配信価格
    */
-  price?: string;
+  price?: string | null;
   /**
    * 配信タイプ
    */
-  type?: string;
+  type?: string | null;
 }
 /**
  * レビュー平均点
@@ -1780,11 +1782,11 @@ export interface ItemListGetResponse_result_items_review
   /**
    * レビュー平均点
    */
-  average?: string;
+  average?: string | null;
   /**
    * レビュー数
    */
-  count?: number;
+  count?: number | null;
 }
 /**
  * サンプル画像URL
@@ -1798,11 +1800,11 @@ export interface ItemListGetResponse_result_items_sampleImageURL
   /**
    * サンプル（大）リスト
    */
-  sample_l?: ItemListGetResponse_result_items_sampleImageURL_sample_l[];
+  sample_l?: ItemListGetResponse_result_items_sampleImageURL_sample_l[] | null;
   /**
    * サンプル（小）リスト
    */
-  sample_s?: ItemListGetResponse_result_items_sampleImageURL_sample_s[];
+  sample_s?: ItemListGetResponse_result_items_sampleImageURL_sample_s[] | null;
 }
 export interface ItemListGetResponse_result_items_sampleImageURL_sample_l
   extends AdditionalDataHolder, Parsable {
@@ -1813,7 +1815,7 @@ export interface ItemListGetResponse_result_items_sampleImageURL_sample_l
   /**
    * サンプル画像（大）
    */
-  image?: string;
+  image?: string | null;
 }
 export interface ItemListGetResponse_result_items_sampleImageURL_sample_s
   extends AdditionalDataHolder, Parsable {
@@ -1824,7 +1826,7 @@ export interface ItemListGetResponse_result_items_sampleImageURL_sample_s
   /**
    * サンプル画像（小）
    */
-  image?: string;
+  image?: string | null;
 }
 /**
  * サンプル動画URL
@@ -1838,27 +1840,27 @@ export interface ItemListGetResponse_result_items_sampleMovieURL
   /**
    * PC対応しているか
    */
-  pc_flag?: number;
+  pc_flag?: number | null;
   /**
    * 476×306
    */
-  size_476_306?: string;
+  size_476_306?: string | null;
   /**
    * 560×360
    */
-  size_560_360?: string;
+  size_560_360?: string | null;
   /**
    * 644×414
    */
-  size_644_414?: string;
+  size_644_414?: string | null;
   /**
    * 720×480
    */
-  size_720_480?: string;
+  size_720_480?: string | null;
   /**
    * スマホ対応しているか
    */
-  sp_flag?: number;
+  sp_flag?: number | null;
 }
 export interface ItemListGetResponse_result_items_tachiyomi
   extends AdditionalDataHolder, Parsable {
@@ -1869,11 +1871,11 @@ export interface ItemListGetResponse_result_items_tachiyomi
   /**
    * 立ち読みアフィリエイトリンクURL
    */
-  affiliateURL?: string;
+  affiliateURL?: string | null;
   /**
    * 立ち読みページURL
    */
-  uRL?: string;
+  uRL?: string | null;
 }
 /**
  * Builds and executes requests for operations under /ItemList
@@ -1973,19 +1975,21 @@ export interface ItemListRequestBuilderGetQueryParameters {
 // @ts-ignore
 export function serializeItemListGetResponse(
   writer: SerializationWriter,
-  itemListGetResponse: Partial<ItemListGetResponse> | undefined = {},
+  itemListGetResponse: Partial<ItemListGetResponse> | undefined | null = {},
 ): void {
-  writer.writeObjectValue<ItemListGetResponse_request>(
-    "request",
-    itemListGetResponse.request,
-    serializeItemListGetResponse_request,
-  );
-  writer.writeObjectValue<ItemListGetResponse_result>(
-    "result",
-    itemListGetResponse.result,
-    serializeItemListGetResponse_result,
-  );
-  writer.writeAdditionalData(itemListGetResponse.additionalData);
+  if (itemListGetResponse) {
+    writer.writeObjectValue<ItemListGetResponse_request>(
+      "request",
+      itemListGetResponse.request,
+      serializeItemListGetResponse_request,
+    );
+    writer.writeObjectValue<ItemListGetResponse_result>(
+      "result",
+      itemListGetResponse.result,
+      serializeItemListGetResponse_result,
+    );
+    writer.writeAdditionalData(itemListGetResponse.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -1996,14 +2000,17 @@ export function serializeItemListGetResponse_request(
   writer: SerializationWriter,
   itemListGetResponse_request:
     | Partial<ItemListGetResponse_request>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeObjectValue<ItemListGetResponse_request_parameters>(
-    "parameters",
-    itemListGetResponse_request.parameters,
-    serializeItemListGetResponse_request_parameters,
-  );
-  writer.writeAdditionalData(itemListGetResponse_request.additionalData);
+  if (itemListGetResponse_request) {
+    writer.writeObjectValue<ItemListGetResponse_request_parameters>(
+      "parameters",
+      itemListGetResponse_request.parameters,
+      serializeItemListGetResponse_request_parameters,
+    );
+    writer.writeAdditionalData(itemListGetResponse_request.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -2014,32 +2021,38 @@ export function serializeItemListGetResponse_request_parameters(
   writer: SerializationWriter,
   itemListGetResponse_request_parameters:
     | Partial<ItemListGetResponse_request_parameters>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "affiliate_id",
-    itemListGetResponse_request_parameters.affiliate_id,
-  );
-  writer.writeStringValue(
-    "api_id",
-    itemListGetResponse_request_parameters.api_id,
-  );
-  writer.writeStringValue(
-    "floor",
-    itemListGetResponse_request_parameters.floor,
-  );
-  writer.writeStringValue(
-    "keyword",
-    itemListGetResponse_request_parameters.keyword,
-  );
-  writer.writeStringValue(
-    "service",
-    itemListGetResponse_request_parameters.service,
-  );
-  writer.writeStringValue("site", itemListGetResponse_request_parameters.site);
-  writer.writeAdditionalData(
-    itemListGetResponse_request_parameters.additionalData,
-  );
+  if (itemListGetResponse_request_parameters) {
+    writer.writeStringValue(
+      "affiliate_id",
+      itemListGetResponse_request_parameters.affiliate_id,
+    );
+    writer.writeStringValue(
+      "api_id",
+      itemListGetResponse_request_parameters.api_id,
+    );
+    writer.writeStringValue(
+      "floor",
+      itemListGetResponse_request_parameters.floor,
+    );
+    writer.writeStringValue(
+      "keyword",
+      itemListGetResponse_request_parameters.keyword,
+    );
+    writer.writeStringValue(
+      "service",
+      itemListGetResponse_request_parameters.service,
+    );
+    writer.writeStringValue(
+      "site",
+      itemListGetResponse_request_parameters.site,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_request_parameters.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2048,28 +2061,32 @@ export function serializeItemListGetResponse_request_parameters(
 // @ts-ignore
 export function serializeItemListGetResponse_result(
   writer: SerializationWriter,
-  itemListGetResponse_result: Partial<ItemListGetResponse_result> | undefined =
-    {},
+  itemListGetResponse_result:
+    | Partial<ItemListGetResponse_result>
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "first_position",
-    itemListGetResponse_result.first_position,
-  );
-  writer.writeCollectionOfObjectValues<ItemListGetResponse_result_items>(
-    "items",
-    itemListGetResponse_result.items,
-    serializeItemListGetResponse_result_items,
-  );
-  writer.writeNumberValue(
-    "result_count",
-    itemListGetResponse_result.result_count,
-  );
-  writer.writeNumberValue("status", itemListGetResponse_result.status);
-  writer.writeNumberValue(
-    "total_count",
-    itemListGetResponse_result.total_count,
-  );
-  writer.writeAdditionalData(itemListGetResponse_result.additionalData);
+  if (itemListGetResponse_result) {
+    writer.writeNumberValue(
+      "first_position",
+      itemListGetResponse_result.first_position,
+    );
+    writer.writeCollectionOfObjectValues<ItemListGetResponse_result_items>(
+      "items",
+      itemListGetResponse_result.items,
+      serializeItemListGetResponse_result_items,
+    );
+    writer.writeNumberValue(
+      "result_count",
+      itemListGetResponse_result.result_count,
+    );
+    writer.writeNumberValue("status", itemListGetResponse_result.status);
+    writer.writeNumberValue(
+      "total_count",
+      itemListGetResponse_result.total_count,
+    );
+    writer.writeAdditionalData(itemListGetResponse_result.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -2080,103 +2097,109 @@ export function serializeItemListGetResponse_result_items(
   writer: SerializationWriter,
   itemListGetResponse_result_items:
     | Partial<ItemListGetResponse_result_items>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "affiliateURL",
-    itemListGetResponse_result_items.affiliateURL,
-  );
-  writer.writeObjectValue<ItemListGetResponse_result_items_campaign>(
-    "campaign",
-    itemListGetResponse_result_items.campaign,
-    serializeItemListGetResponse_result_items_campaign,
-  );
-  writer.writeStringValue(
-    "category_name",
-    itemListGetResponse_result_items.category_name,
-  );
-  writer.writeObjectValue<ItemListGetResponse_result_items_cdinfo>(
-    "cdinfo",
-    itemListGetResponse_result_items.cdinfo,
-    serializeItemListGetResponse_result_items_cdinfo,
-  );
-  writer.writeStringValue(
-    "content_id",
-    itemListGetResponse_result_items.content_id,
-  );
-  writer.writeStringValue("date", itemListGetResponse_result_items.date);
-  writer.writeObjectValue<ItemListGetResponse_result_items_directory>(
-    "directory",
-    itemListGetResponse_result_items.directory,
-    serializeItemListGetResponse_result_items_directory,
-  );
-  writer.writeStringValue(
-    "floor_code",
-    itemListGetResponse_result_items.floor_code,
-  );
-  writer.writeStringValue(
-    "floor_name",
-    itemListGetResponse_result_items.floor_name,
-  );
-  writer.writeObjectValue<ItemListGetResponse_result_items_imageURL>(
-    "imageURL",
-    itemListGetResponse_result_items.imageURL,
-    serializeItemListGetResponse_result_items_imageURL,
-  );
-  writer.writeStringValue("isbn", itemListGetResponse_result_items.isbn);
-  writer.writeObjectValue<ItemListGetResponse_result_items_iteminfo>(
-    "iteminfo",
-    itemListGetResponse_result_items.iteminfo,
-    serializeItemListGetResponse_result_items_iteminfo,
-  );
-  writer.writeStringValue("jancode", itemListGetResponse_result_items.jancode);
-  writer.writeStringValue(
-    "maker_product",
-    itemListGetResponse_result_items.maker_product,
-  );
-  writer.writeStringValue("number", itemListGetResponse_result_items.number);
-  writer.writeObjectValue<ItemListGetResponse_result_items_prices>(
-    "prices",
-    itemListGetResponse_result_items.prices,
-    serializeItemListGetResponse_result_items_prices,
-  );
-  writer.writeStringValue(
-    "product_id",
-    itemListGetResponse_result_items.product_id,
-  );
-  writer.writeObjectValue<ItemListGetResponse_result_items_review>(
-    "review",
-    itemListGetResponse_result_items.review,
-    serializeItemListGetResponse_result_items_review,
-  );
-  writer.writeObjectValue<ItemListGetResponse_result_items_sampleImageURL>(
-    "sampleImageURL",
-    itemListGetResponse_result_items.sampleImageURL,
-    serializeItemListGetResponse_result_items_sampleImageURL,
-  );
-  writer.writeObjectValue<ItemListGetResponse_result_items_sampleMovieURL>(
-    "sampleMovieURL",
-    itemListGetResponse_result_items.sampleMovieURL,
-    serializeItemListGetResponse_result_items_sampleMovieURL,
-  );
-  writer.writeStringValue(
-    "service_code",
-    itemListGetResponse_result_items.service_code,
-  );
-  writer.writeStringValue(
-    "service_name",
-    itemListGetResponse_result_items.service_name,
-  );
-  writer.writeStringValue("stock", itemListGetResponse_result_items.stock);
-  writer.writeObjectValue<ItemListGetResponse_result_items_tachiyomi>(
-    "tachiyomi",
-    itemListGetResponse_result_items.tachiyomi,
-    serializeItemListGetResponse_result_items_tachiyomi,
-  );
-  writer.writeStringValue("title", itemListGetResponse_result_items.title);
-  writer.writeStringValue("URL", itemListGetResponse_result_items.uRL);
-  writer.writeStringValue("volume", itemListGetResponse_result_items.volume);
-  writer.writeAdditionalData(itemListGetResponse_result_items.additionalData);
+  if (itemListGetResponse_result_items) {
+    writer.writeStringValue(
+      "affiliateURL",
+      itemListGetResponse_result_items.affiliateURL,
+    );
+    writer.writeObjectValue<ItemListGetResponse_result_items_campaign>(
+      "campaign",
+      itemListGetResponse_result_items.campaign,
+      serializeItemListGetResponse_result_items_campaign,
+    );
+    writer.writeStringValue(
+      "category_name",
+      itemListGetResponse_result_items.category_name,
+    );
+    writer.writeObjectValue<ItemListGetResponse_result_items_cdinfo>(
+      "cdinfo",
+      itemListGetResponse_result_items.cdinfo,
+      serializeItemListGetResponse_result_items_cdinfo,
+    );
+    writer.writeStringValue(
+      "content_id",
+      itemListGetResponse_result_items.content_id,
+    );
+    writer.writeStringValue("date", itemListGetResponse_result_items.date);
+    writer.writeObjectValue<ItemListGetResponse_result_items_directory>(
+      "directory",
+      itemListGetResponse_result_items.directory,
+      serializeItemListGetResponse_result_items_directory,
+    );
+    writer.writeStringValue(
+      "floor_code",
+      itemListGetResponse_result_items.floor_code,
+    );
+    writer.writeStringValue(
+      "floor_name",
+      itemListGetResponse_result_items.floor_name,
+    );
+    writer.writeObjectValue<ItemListGetResponse_result_items_imageURL>(
+      "imageURL",
+      itemListGetResponse_result_items.imageURL,
+      serializeItemListGetResponse_result_items_imageURL,
+    );
+    writer.writeStringValue("isbn", itemListGetResponse_result_items.isbn);
+    writer.writeObjectValue<ItemListGetResponse_result_items_iteminfo>(
+      "iteminfo",
+      itemListGetResponse_result_items.iteminfo,
+      serializeItemListGetResponse_result_items_iteminfo,
+    );
+    writer.writeStringValue(
+      "jancode",
+      itemListGetResponse_result_items.jancode,
+    );
+    writer.writeStringValue(
+      "maker_product",
+      itemListGetResponse_result_items.maker_product,
+    );
+    writer.writeStringValue("number", itemListGetResponse_result_items.number);
+    writer.writeObjectValue<ItemListGetResponse_result_items_prices>(
+      "prices",
+      itemListGetResponse_result_items.prices,
+      serializeItemListGetResponse_result_items_prices,
+    );
+    writer.writeStringValue(
+      "product_id",
+      itemListGetResponse_result_items.product_id,
+    );
+    writer.writeObjectValue<ItemListGetResponse_result_items_review>(
+      "review",
+      itemListGetResponse_result_items.review,
+      serializeItemListGetResponse_result_items_review,
+    );
+    writer.writeObjectValue<ItemListGetResponse_result_items_sampleImageURL>(
+      "sampleImageURL",
+      itemListGetResponse_result_items.sampleImageURL,
+      serializeItemListGetResponse_result_items_sampleImageURL,
+    );
+    writer.writeObjectValue<ItemListGetResponse_result_items_sampleMovieURL>(
+      "sampleMovieURL",
+      itemListGetResponse_result_items.sampleMovieURL,
+      serializeItemListGetResponse_result_items_sampleMovieURL,
+    );
+    writer.writeStringValue(
+      "service_code",
+      itemListGetResponse_result_items.service_code,
+    );
+    writer.writeStringValue(
+      "service_name",
+      itemListGetResponse_result_items.service_name,
+    );
+    writer.writeStringValue("stock", itemListGetResponse_result_items.stock);
+    writer.writeObjectValue<ItemListGetResponse_result_items_tachiyomi>(
+      "tachiyomi",
+      itemListGetResponse_result_items.tachiyomi,
+      serializeItemListGetResponse_result_items_tachiyomi,
+    );
+    writer.writeStringValue("title", itemListGetResponse_result_items.title);
+    writer.writeStringValue("URL", itemListGetResponse_result_items.uRL);
+    writer.writeStringValue("volume", itemListGetResponse_result_items.volume);
+    writer.writeAdditionalData(itemListGetResponse_result_items.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -2187,23 +2210,26 @@ export function serializeItemListGetResponse_result_items_campaign(
   writer: SerializationWriter,
   itemListGetResponse_result_items_campaign:
     | Partial<ItemListGetResponse_result_items_campaign>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "date_begin",
-    itemListGetResponse_result_items_campaign.date_begin,
-  );
-  writer.writeStringValue(
-    "date_end",
-    itemListGetResponse_result_items_campaign.date_end,
-  );
-  writer.writeStringValue(
-    "title",
-    itemListGetResponse_result_items_campaign.title,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_campaign.additionalData,
-  );
+  if (itemListGetResponse_result_items_campaign) {
+    writer.writeStringValue(
+      "date_begin",
+      itemListGetResponse_result_items_campaign.date_begin,
+    );
+    writer.writeStringValue(
+      "date_end",
+      itemListGetResponse_result_items_campaign.date_end,
+    );
+    writer.writeStringValue(
+      "title",
+      itemListGetResponse_result_items_campaign.title,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_campaign.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2214,12 +2240,18 @@ export function serializeItemListGetResponse_result_items_cdinfo(
   writer: SerializationWriter,
   itemListGetResponse_result_items_cdinfo:
     | Partial<ItemListGetResponse_result_items_cdinfo>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue("kind", itemListGetResponse_result_items_cdinfo.kind);
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_cdinfo.additionalData,
-  );
+  if (itemListGetResponse_result_items_cdinfo) {
+    writer.writeStringValue(
+      "kind",
+      itemListGetResponse_result_items_cdinfo.kind,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_cdinfo.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2230,16 +2262,22 @@ export function serializeItemListGetResponse_result_items_directory(
   writer: SerializationWriter,
   itemListGetResponse_result_items_directory:
     | Partial<ItemListGetResponse_result_items_directory>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue("id", itemListGetResponse_result_items_directory.id);
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_directory.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_directory.additionalData,
-  );
+  if (itemListGetResponse_result_items_directory) {
+    writer.writeStringValue(
+      "id",
+      itemListGetResponse_result_items_directory.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_directory.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_directory.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2250,23 +2288,26 @@ export function serializeItemListGetResponse_result_items_imageURL(
   writer: SerializationWriter,
   itemListGetResponse_result_items_imageURL:
     | Partial<ItemListGetResponse_result_items_imageURL>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "large",
-    itemListGetResponse_result_items_imageURL.large,
-  );
-  writer.writeStringValue(
-    "list",
-    itemListGetResponse_result_items_imageURL.list,
-  );
-  writer.writeStringValue(
-    "small",
-    itemListGetResponse_result_items_imageURL.small,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_imageURL.additionalData,
-  );
+  if (itemListGetResponse_result_items_imageURL) {
+    writer.writeStringValue(
+      "large",
+      itemListGetResponse_result_items_imageURL.large,
+    );
+    writer.writeStringValue(
+      "list",
+      itemListGetResponse_result_items_imageURL.list,
+    );
+    writer.writeStringValue(
+      "small",
+      itemListGetResponse_result_items_imageURL.small,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_imageURL.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2277,95 +2318,98 @@ export function serializeItemListGetResponse_result_items_iteminfo(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo:
     | Partial<ItemListGetResponse_result_items_iteminfo>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_actor
-  >(
-    "actor",
-    itemListGetResponse_result_items_iteminfo.actor,
-    serializeItemListGetResponse_result_items_iteminfo_actor,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_actress
-  >(
-    "actress",
-    itemListGetResponse_result_items_iteminfo.actress,
-    serializeItemListGetResponse_result_items_iteminfo_actress,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_author
-  >(
-    "author",
-    itemListGetResponse_result_items_iteminfo.author,
-    serializeItemListGetResponse_result_items_iteminfo_author,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_color
-  >(
-    "color",
-    itemListGetResponse_result_items_iteminfo.color,
-    serializeItemListGetResponse_result_items_iteminfo_color,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_director
-  >(
-    "director",
-    itemListGetResponse_result_items_iteminfo.director,
-    serializeItemListGetResponse_result_items_iteminfo_director,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_genre
-  >(
-    "genre",
-    itemListGetResponse_result_items_iteminfo.genre,
-    serializeItemListGetResponse_result_items_iteminfo_genre,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_label
-  >(
-    "label",
-    itemListGetResponse_result_items_iteminfo.label,
-    serializeItemListGetResponse_result_items_iteminfo_label,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_maker
-  >(
-    "maker",
-    itemListGetResponse_result_items_iteminfo.maker,
-    serializeItemListGetResponse_result_items_iteminfo_maker,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_manufacture
-  >(
-    "manufacture",
-    itemListGetResponse_result_items_iteminfo.manufacture,
-    serializeItemListGetResponse_result_items_iteminfo_manufacture,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_series
-  >(
-    "series",
-    itemListGetResponse_result_items_iteminfo.series,
-    serializeItemListGetResponse_result_items_iteminfo_series,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_size
-  >(
-    "size",
-    itemListGetResponse_result_items_iteminfo.size,
-    serializeItemListGetResponse_result_items_iteminfo_size,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_iteminfo_type
-  >(
-    "type",
-    itemListGetResponse_result_items_iteminfo.type,
-    serializeItemListGetResponse_result_items_iteminfo_type,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo) {
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_actor
+    >(
+      "actor",
+      itemListGetResponse_result_items_iteminfo.actor,
+      serializeItemListGetResponse_result_items_iteminfo_actor,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_actress
+    >(
+      "actress",
+      itemListGetResponse_result_items_iteminfo.actress,
+      serializeItemListGetResponse_result_items_iteminfo_actress,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_author
+    >(
+      "author",
+      itemListGetResponse_result_items_iteminfo.author,
+      serializeItemListGetResponse_result_items_iteminfo_author,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_color
+    >(
+      "color",
+      itemListGetResponse_result_items_iteminfo.color,
+      serializeItemListGetResponse_result_items_iteminfo_color,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_director
+    >(
+      "director",
+      itemListGetResponse_result_items_iteminfo.director,
+      serializeItemListGetResponse_result_items_iteminfo_director,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_genre
+    >(
+      "genre",
+      itemListGetResponse_result_items_iteminfo.genre,
+      serializeItemListGetResponse_result_items_iteminfo_genre,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_label
+    >(
+      "label",
+      itemListGetResponse_result_items_iteminfo.label,
+      serializeItemListGetResponse_result_items_iteminfo_label,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_maker
+    >(
+      "maker",
+      itemListGetResponse_result_items_iteminfo.maker,
+      serializeItemListGetResponse_result_items_iteminfo_maker,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_manufacture
+    >(
+      "manufacture",
+      itemListGetResponse_result_items_iteminfo.manufacture,
+      serializeItemListGetResponse_result_items_iteminfo_manufacture,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_series
+    >(
+      "series",
+      itemListGetResponse_result_items_iteminfo.series,
+      serializeItemListGetResponse_result_items_iteminfo_series,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_size
+    >(
+      "size",
+      itemListGetResponse_result_items_iteminfo.size,
+      serializeItemListGetResponse_result_items_iteminfo_size,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_iteminfo_type
+    >(
+      "type",
+      itemListGetResponse_result_items_iteminfo.type,
+      serializeItemListGetResponse_result_items_iteminfo_type,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2376,19 +2420,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_actor(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_actor:
     | Partial<ItemListGetResponse_result_items_iteminfo_actor>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_actor.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_actor.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_actor.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_actor) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_actor.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_actor.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_actor.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2399,23 +2446,26 @@ export function serializeItemListGetResponse_result_items_iteminfo_actress(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_actress:
     | Partial<ItemListGetResponse_result_items_iteminfo_actress>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_actress.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_actress.name,
-  );
-  writer.writeStringValue(
-    "ruby",
-    itemListGetResponse_result_items_iteminfo_actress.ruby,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_actress.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_actress) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_actress.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_actress.name,
+    );
+    writer.writeStringValue(
+      "ruby",
+      itemListGetResponse_result_items_iteminfo_actress.ruby,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_actress.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2426,19 +2476,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_author(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_author:
     | Partial<ItemListGetResponse_result_items_iteminfo_author>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_author.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_author.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_author.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_author) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_author.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_author.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_author.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2449,19 +2502,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_color(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_color:
     | Partial<ItemListGetResponse_result_items_iteminfo_color>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_color.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_color.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_color.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_color) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_color.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_color.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_color.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2472,23 +2528,26 @@ export function serializeItemListGetResponse_result_items_iteminfo_director(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_director:
     | Partial<ItemListGetResponse_result_items_iteminfo_director>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_director.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_director.name,
-  );
-  writer.writeStringValue(
-    "ruby",
-    itemListGetResponse_result_items_iteminfo_director.ruby,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_director.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_director) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_director.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_director.name,
+    );
+    writer.writeStringValue(
+      "ruby",
+      itemListGetResponse_result_items_iteminfo_director.ruby,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_director.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2499,19 +2558,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_genre(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_genre:
     | Partial<ItemListGetResponse_result_items_iteminfo_genre>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_genre.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_genre.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_genre.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_genre) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_genre.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_genre.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_genre.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2522,19 +2584,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_label(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_label:
     | Partial<ItemListGetResponse_result_items_iteminfo_label>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_label.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_label.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_label.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_label) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_label.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_label.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_label.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2545,19 +2610,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_maker(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_maker:
     | Partial<ItemListGetResponse_result_items_iteminfo_maker>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_maker.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_maker.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_maker.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_maker) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_maker.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_maker.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_maker.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2568,19 +2636,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_manufacture(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_manufacture:
     | Partial<ItemListGetResponse_result_items_iteminfo_manufacture>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_manufacture.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_manufacture.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_manufacture.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_manufacture) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_manufacture.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_manufacture.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_manufacture.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2591,19 +2662,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_series(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_series:
     | Partial<ItemListGetResponse_result_items_iteminfo_series>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_series.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_series.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_series.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_series) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_series.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_series.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_series.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2614,19 +2688,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_size(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_size:
     | Partial<ItemListGetResponse_result_items_iteminfo_size>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_size.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_size.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_size.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_size) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_size.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_size.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_size.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2637,19 +2714,22 @@ export function serializeItemListGetResponse_result_items_iteminfo_type(
   writer: SerializationWriter,
   itemListGetResponse_result_items_iteminfo_type:
     | Partial<ItemListGetResponse_result_items_iteminfo_type>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "id",
-    itemListGetResponse_result_items_iteminfo_type.id,
-  );
-  writer.writeStringValue(
-    "name",
-    itemListGetResponse_result_items_iteminfo_type.name,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_iteminfo_type.additionalData,
-  );
+  if (itemListGetResponse_result_items_iteminfo_type) {
+    writer.writeNumberValue(
+      "id",
+      itemListGetResponse_result_items_iteminfo_type.id,
+    );
+    writer.writeStringValue(
+      "name",
+      itemListGetResponse_result_items_iteminfo_type.name,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_iteminfo_type.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2660,24 +2740,27 @@ export function serializeItemListGetResponse_result_items_prices(
   writer: SerializationWriter,
   itemListGetResponse_result_items_prices:
     | Partial<ItemListGetResponse_result_items_prices>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeObjectValue<ItemListGetResponse_result_items_prices_deliveries>(
-    "deliveries",
-    itemListGetResponse_result_items_prices.deliveries,
-    serializeItemListGetResponse_result_items_prices_deliveries,
-  );
-  writer.writeStringValue(
-    "list_price",
-    itemListGetResponse_result_items_prices.list_price,
-  );
-  writer.writeStringValue(
-    "price",
-    itemListGetResponse_result_items_prices.price,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_prices.additionalData,
-  );
+  if (itemListGetResponse_result_items_prices) {
+    writer.writeObjectValue<ItemListGetResponse_result_items_prices_deliveries>(
+      "deliveries",
+      itemListGetResponse_result_items_prices.deliveries,
+      serializeItemListGetResponse_result_items_prices_deliveries,
+    );
+    writer.writeStringValue(
+      "list_price",
+      itemListGetResponse_result_items_prices.list_price,
+    );
+    writer.writeStringValue(
+      "price",
+      itemListGetResponse_result_items_prices.price,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_prices.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2688,18 +2771,21 @@ export function serializeItemListGetResponse_result_items_prices_deliveries(
   writer: SerializationWriter,
   itemListGetResponse_result_items_prices_deliveries:
     | Partial<ItemListGetResponse_result_items_prices_deliveries>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_prices_deliveries_delivery
-  >(
-    "delivery",
-    itemListGetResponse_result_items_prices_deliveries.delivery,
-    serializeItemListGetResponse_result_items_prices_deliveries_delivery,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_prices_deliveries.additionalData,
-  );
+  if (itemListGetResponse_result_items_prices_deliveries) {
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_prices_deliveries_delivery
+    >(
+      "delivery",
+      itemListGetResponse_result_items_prices_deliveries.delivery,
+      serializeItemListGetResponse_result_items_prices_deliveries_delivery,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_prices_deliveries.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2710,19 +2796,23 @@ export function serializeItemListGetResponse_result_items_prices_deliveries_deli
   writer: SerializationWriter,
   itemListGetResponse_result_items_prices_deliveries_delivery:
     | Partial<ItemListGetResponse_result_items_prices_deliveries_delivery>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "price",
-    itemListGetResponse_result_items_prices_deliveries_delivery.price,
-  );
-  writer.writeStringValue(
-    "type",
-    itemListGetResponse_result_items_prices_deliveries_delivery.type,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_prices_deliveries_delivery.additionalData,
-  );
+  if (itemListGetResponse_result_items_prices_deliveries_delivery) {
+    writer.writeStringValue(
+      "price",
+      itemListGetResponse_result_items_prices_deliveries_delivery.price,
+    );
+    writer.writeStringValue(
+      "type",
+      itemListGetResponse_result_items_prices_deliveries_delivery.type,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_prices_deliveries_delivery
+        .additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2733,19 +2823,22 @@ export function serializeItemListGetResponse_result_items_review(
   writer: SerializationWriter,
   itemListGetResponse_result_items_review:
     | Partial<ItemListGetResponse_result_items_review>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "average",
-    itemListGetResponse_result_items_review.average,
-  );
-  writer.writeNumberValue(
-    "count",
-    itemListGetResponse_result_items_review.count,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_review.additionalData,
-  );
+  if (itemListGetResponse_result_items_review) {
+    writer.writeStringValue(
+      "average",
+      itemListGetResponse_result_items_review.average,
+    );
+    writer.writeNumberValue(
+      "count",
+      itemListGetResponse_result_items_review.count,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_review.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2756,25 +2849,28 @@ export function serializeItemListGetResponse_result_items_sampleImageURL(
   writer: SerializationWriter,
   itemListGetResponse_result_items_sampleImageURL:
     | Partial<ItemListGetResponse_result_items_sampleImageURL>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_sampleImageURL_sample_l
-  >(
-    "sample_l",
-    itemListGetResponse_result_items_sampleImageURL.sample_l,
-    serializeItemListGetResponse_result_items_sampleImageURL_sample_l,
-  );
-  writer.writeCollectionOfObjectValues<
-    ItemListGetResponse_result_items_sampleImageURL_sample_s
-  >(
-    "sample_s",
-    itemListGetResponse_result_items_sampleImageURL.sample_s,
-    serializeItemListGetResponse_result_items_sampleImageURL_sample_s,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_sampleImageURL.additionalData,
-  );
+  if (itemListGetResponse_result_items_sampleImageURL) {
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_sampleImageURL_sample_l
+    >(
+      "sample_l",
+      itemListGetResponse_result_items_sampleImageURL.sample_l,
+      serializeItemListGetResponse_result_items_sampleImageURL_sample_l,
+    );
+    writer.writeCollectionOfObjectValues<
+      ItemListGetResponse_result_items_sampleImageURL_sample_s
+    >(
+      "sample_s",
+      itemListGetResponse_result_items_sampleImageURL.sample_s,
+      serializeItemListGetResponse_result_items_sampleImageURL_sample_s,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_sampleImageURL.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2785,15 +2881,18 @@ export function serializeItemListGetResponse_result_items_sampleImageURL_sample_
   writer: SerializationWriter,
   itemListGetResponse_result_items_sampleImageURL_sample_l:
     | Partial<ItemListGetResponse_result_items_sampleImageURL_sample_l>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "image",
-    itemListGetResponse_result_items_sampleImageURL_sample_l.image,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_sampleImageURL_sample_l.additionalData,
-  );
+  if (itemListGetResponse_result_items_sampleImageURL_sample_l) {
+    writer.writeStringValue(
+      "image",
+      itemListGetResponse_result_items_sampleImageURL_sample_l.image,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_sampleImageURL_sample_l.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2804,15 +2903,18 @@ export function serializeItemListGetResponse_result_items_sampleImageURL_sample_
   writer: SerializationWriter,
   itemListGetResponse_result_items_sampleImageURL_sample_s:
     | Partial<ItemListGetResponse_result_items_sampleImageURL_sample_s>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "image",
-    itemListGetResponse_result_items_sampleImageURL_sample_s.image,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_sampleImageURL_sample_s.additionalData,
-  );
+  if (itemListGetResponse_result_items_sampleImageURL_sample_s) {
+    writer.writeStringValue(
+      "image",
+      itemListGetResponse_result_items_sampleImageURL_sample_s.image,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_sampleImageURL_sample_s.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2823,35 +2925,38 @@ export function serializeItemListGetResponse_result_items_sampleMovieURL(
   writer: SerializationWriter,
   itemListGetResponse_result_items_sampleMovieURL:
     | Partial<ItemListGetResponse_result_items_sampleMovieURL>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "pc_flag",
-    itemListGetResponse_result_items_sampleMovieURL.pc_flag,
-  );
-  writer.writeStringValue(
-    "size_476_306",
-    itemListGetResponse_result_items_sampleMovieURL.size_476_306,
-  );
-  writer.writeStringValue(
-    "size_560_360",
-    itemListGetResponse_result_items_sampleMovieURL.size_560_360,
-  );
-  writer.writeStringValue(
-    "size_644_414",
-    itemListGetResponse_result_items_sampleMovieURL.size_644_414,
-  );
-  writer.writeStringValue(
-    "size_720_480",
-    itemListGetResponse_result_items_sampleMovieURL.size_720_480,
-  );
-  writer.writeNumberValue(
-    "sp_flag",
-    itemListGetResponse_result_items_sampleMovieURL.sp_flag,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_sampleMovieURL.additionalData,
-  );
+  if (itemListGetResponse_result_items_sampleMovieURL) {
+    writer.writeNumberValue(
+      "pc_flag",
+      itemListGetResponse_result_items_sampleMovieURL.pc_flag,
+    );
+    writer.writeStringValue(
+      "size_476_306",
+      itemListGetResponse_result_items_sampleMovieURL.size_476_306,
+    );
+    writer.writeStringValue(
+      "size_560_360",
+      itemListGetResponse_result_items_sampleMovieURL.size_560_360,
+    );
+    writer.writeStringValue(
+      "size_644_414",
+      itemListGetResponse_result_items_sampleMovieURL.size_644_414,
+    );
+    writer.writeStringValue(
+      "size_720_480",
+      itemListGetResponse_result_items_sampleMovieURL.size_720_480,
+    );
+    writer.writeNumberValue(
+      "sp_flag",
+      itemListGetResponse_result_items_sampleMovieURL.sp_flag,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_sampleMovieURL.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -2862,19 +2967,22 @@ export function serializeItemListGetResponse_result_items_tachiyomi(
   writer: SerializationWriter,
   itemListGetResponse_result_items_tachiyomi:
     | Partial<ItemListGetResponse_result_items_tachiyomi>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "affiliateURL",
-    itemListGetResponse_result_items_tachiyomi.affiliateURL,
-  );
-  writer.writeStringValue(
-    "URL",
-    itemListGetResponse_result_items_tachiyomi.uRL,
-  );
-  writer.writeAdditionalData(
-    itemListGetResponse_result_items_tachiyomi.additionalData,
-  );
+  if (itemListGetResponse_result_items_tachiyomi) {
+    writer.writeStringValue(
+      "affiliateURL",
+      itemListGetResponse_result_items_tachiyomi.affiliateURL,
+    );
+    writer.writeStringValue(
+      "URL",
+      itemListGetResponse_result_items_tachiyomi.uRL,
+    );
+    writer.writeAdditionalData(
+      itemListGetResponse_result_items_tachiyomi.additionalData,
+    );
+  }
 }
 /**
  * Uri template for the request builder.

@@ -227,19 +227,22 @@ export type GetOutputQueryParameterType =
 // @ts-ignore
 export function serializeSeriesSearchGetResponse(
   writer: SerializationWriter,
-  seriesSearchGetResponse: Partial<SeriesSearchGetResponse> | undefined = {},
+  seriesSearchGetResponse: Partial<SeriesSearchGetResponse> | undefined | null =
+    {},
 ): void {
-  writer.writeObjectValue<SeriesSearchGetResponse_request>(
-    "request",
-    seriesSearchGetResponse.request,
-    serializeSeriesSearchGetResponse_request,
-  );
-  writer.writeObjectValue<SeriesSearchGetResponse_result>(
-    "result",
-    seriesSearchGetResponse.result,
-    serializeSeriesSearchGetResponse_result,
-  );
-  writer.writeAdditionalData(seriesSearchGetResponse.additionalData);
+  if (seriesSearchGetResponse) {
+    writer.writeObjectValue<SeriesSearchGetResponse_request>(
+      "request",
+      seriesSearchGetResponse.request,
+      serializeSeriesSearchGetResponse_request,
+    );
+    writer.writeObjectValue<SeriesSearchGetResponse_result>(
+      "result",
+      seriesSearchGetResponse.result,
+      serializeSeriesSearchGetResponse_result,
+    );
+    writer.writeAdditionalData(seriesSearchGetResponse.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -250,14 +253,17 @@ export function serializeSeriesSearchGetResponse_request(
   writer: SerializationWriter,
   seriesSearchGetResponse_request:
     | Partial<SeriesSearchGetResponse_request>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeObjectValue<SeriesSearchGetResponse_request_parameters>(
-    "parameters",
-    seriesSearchGetResponse_request.parameters,
-    serializeSeriesSearchGetResponse_request_parameters,
-  );
-  writer.writeAdditionalData(seriesSearchGetResponse_request.additionalData);
+  if (seriesSearchGetResponse_request) {
+    writer.writeObjectValue<SeriesSearchGetResponse_request_parameters>(
+      "parameters",
+      seriesSearchGetResponse_request.parameters,
+      serializeSeriesSearchGetResponse_request_parameters,
+    );
+    writer.writeAdditionalData(seriesSearchGetResponse_request.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -268,35 +274,38 @@ export function serializeSeriesSearchGetResponse_request_parameters(
   writer: SerializationWriter,
   seriesSearchGetResponse_request_parameters:
     | Partial<SeriesSearchGetResponse_request_parameters>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "affiliate_id",
-    seriesSearchGetResponse_request_parameters.affiliate_id,
-  );
-  writer.writeStringValue(
-    "api_id",
-    seriesSearchGetResponse_request_parameters.api_id,
-  );
-  writer.writeStringValue(
-    "floor_id",
-    seriesSearchGetResponse_request_parameters.floor_id,
-  );
-  writer.writeStringValue(
-    "hits",
-    seriesSearchGetResponse_request_parameters.hits,
-  );
-  writer.writeStringValue(
-    "initial",
-    seriesSearchGetResponse_request_parameters.initial,
-  );
-  writer.writeStringValue(
-    "output",
-    seriesSearchGetResponse_request_parameters.output,
-  );
-  writer.writeAdditionalData(
-    seriesSearchGetResponse_request_parameters.additionalData,
-  );
+  if (seriesSearchGetResponse_request_parameters) {
+    writer.writeStringValue(
+      "affiliate_id",
+      seriesSearchGetResponse_request_parameters.affiliate_id,
+    );
+    writer.writeStringValue(
+      "api_id",
+      seriesSearchGetResponse_request_parameters.api_id,
+    );
+    writer.writeStringValue(
+      "floor_id",
+      seriesSearchGetResponse_request_parameters.floor_id,
+    );
+    writer.writeStringValue(
+      "hits",
+      seriesSearchGetResponse_request_parameters.hits,
+    );
+    writer.writeStringValue(
+      "initial",
+      seriesSearchGetResponse_request_parameters.initial,
+    );
+    writer.writeStringValue(
+      "output",
+      seriesSearchGetResponse_request_parameters.output,
+    );
+    writer.writeAdditionalData(
+      seriesSearchGetResponse_request_parameters.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -307,52 +316,58 @@ export function serializeSeriesSearchGetResponse_result(
   writer: SerializationWriter,
   seriesSearchGetResponse_result:
     | Partial<SeriesSearchGetResponse_result>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeNumberValue(
-    "first_position",
-    seriesSearchGetResponse_result.first_position,
-  );
-  writer.writeStringValue(
-    "floor_code",
-    seriesSearchGetResponse_result.floor_code,
-  );
-  writer.writeStringValue("floor_id", seriesSearchGetResponse_result.floor_id);
-  writer.writeStringValue(
-    "floor_name",
-    seriesSearchGetResponse_result.floor_name,
-  );
-  writer.writeNumberValue(
-    "result_count",
-    seriesSearchGetResponse_result.result_count,
-  );
-  writer.writeCollectionOfObjectValues<SeriesSearchGetResponse_result_series>(
-    "series",
-    seriesSearchGetResponse_result.series,
-    serializeSeriesSearchGetResponse_result_series,
-  );
-  writer.writeStringValue(
-    "service_code",
-    seriesSearchGetResponse_result.service_code,
-  );
-  writer.writeStringValue(
-    "service_name",
-    seriesSearchGetResponse_result.service_name,
-  );
-  writer.writeStringValue(
-    "site_code",
-    seriesSearchGetResponse_result.site_code,
-  );
-  writer.writeStringValue(
-    "site_name",
-    seriesSearchGetResponse_result.site_name,
-  );
-  writer.writeStringValue("status", seriesSearchGetResponse_result.status);
-  writer.writeStringValue(
-    "total_count",
-    seriesSearchGetResponse_result.total_count,
-  );
-  writer.writeAdditionalData(seriesSearchGetResponse_result.additionalData);
+  if (seriesSearchGetResponse_result) {
+    writer.writeNumberValue(
+      "first_position",
+      seriesSearchGetResponse_result.first_position,
+    );
+    writer.writeStringValue(
+      "floor_code",
+      seriesSearchGetResponse_result.floor_code,
+    );
+    writer.writeStringValue(
+      "floor_id",
+      seriesSearchGetResponse_result.floor_id,
+    );
+    writer.writeStringValue(
+      "floor_name",
+      seriesSearchGetResponse_result.floor_name,
+    );
+    writer.writeNumberValue(
+      "result_count",
+      seriesSearchGetResponse_result.result_count,
+    );
+    writer.writeCollectionOfObjectValues<SeriesSearchGetResponse_result_series>(
+      "series",
+      seriesSearchGetResponse_result.series,
+      serializeSeriesSearchGetResponse_result_series,
+    );
+    writer.writeStringValue(
+      "service_code",
+      seriesSearchGetResponse_result.service_code,
+    );
+    writer.writeStringValue(
+      "service_name",
+      seriesSearchGetResponse_result.service_name,
+    );
+    writer.writeStringValue(
+      "site_code",
+      seriesSearchGetResponse_result.site_code,
+    );
+    writer.writeStringValue(
+      "site_name",
+      seriesSearchGetResponse_result.site_name,
+    );
+    writer.writeStringValue("status", seriesSearchGetResponse_result.status);
+    writer.writeStringValue(
+      "total_count",
+      seriesSearchGetResponse_result.total_count,
+    );
+    writer.writeAdditionalData(seriesSearchGetResponse_result.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -363,21 +378,24 @@ export function serializeSeriesSearchGetResponse_result_series(
   writer: SerializationWriter,
   seriesSearchGetResponse_result_series:
     | Partial<SeriesSearchGetResponse_result_series>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "list_url",
-    seriesSearchGetResponse_result_series.list_url,
-  );
-  writer.writeStringValue("name", seriesSearchGetResponse_result_series.name);
-  writer.writeStringValue("ruby", seriesSearchGetResponse_result_series.ruby);
-  writer.writeStringValue(
-    "series_id",
-    seriesSearchGetResponse_result_series.series_id,
-  );
-  writer.writeAdditionalData(
-    seriesSearchGetResponse_result_series.additionalData,
-  );
+  if (seriesSearchGetResponse_result_series) {
+    writer.writeStringValue(
+      "list_url",
+      seriesSearchGetResponse_result_series.list_url,
+    );
+    writer.writeStringValue("name", seriesSearchGetResponse_result_series.name);
+    writer.writeStringValue("ruby", seriesSearchGetResponse_result_series.ruby);
+    writer.writeStringValue(
+      "series_id",
+      seriesSearchGetResponse_result_series.series_id,
+    );
+    writer.writeAdditionalData(
+      seriesSearchGetResponse_result_series.additionalData,
+    );
+  }
 }
 /**
  * シリーズ一覧
@@ -391,11 +409,11 @@ export interface SeriesSearchGetResponse
   /**
    * The request property
    */
-  request?: SeriesSearchGetResponse_request;
+  request?: SeriesSearchGetResponse_request | null;
   /**
    * The result property
    */
-  result?: SeriesSearchGetResponse_result;
+  result?: SeriesSearchGetResponse_result | null;
 }
 export interface SeriesSearchGetResponse_request
   extends AdditionalDataHolder, Parsable {
@@ -406,7 +424,7 @@ export interface SeriesSearchGetResponse_request
   /**
    * The parameters property
    */
-  parameters?: SeriesSearchGetResponse_request_parameters;
+  parameters?: SeriesSearchGetResponse_request_parameters | null;
 }
 export interface SeriesSearchGetResponse_request_parameters
   extends AdditionalDataHolder, Parsable {
@@ -417,27 +435,27 @@ export interface SeriesSearchGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string;
+  affiliate_id?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string;
+  api_id?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string;
+  floor_id?: string | null;
   /**
    * The hits property
    */
-  hits?: string;
+  hits?: string | null;
   /**
    * The initial property
    */
-  initial?: string;
+  initial?: string | null;
   /**
    * The output property
    */
-  output?: string;
+  output?: string | null;
 }
 export interface SeriesSearchGetResponse_result
   extends AdditionalDataHolder, Parsable {
@@ -448,51 +466,51 @@ export interface SeriesSearchGetResponse_result
   /**
    * The first_position property
    */
-  first_position?: number;
+  first_position?: number | null;
   /**
    * The floor_code property
    */
-  floor_code?: string;
+  floor_code?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string;
+  floor_id?: string | null;
   /**
    * The floor_name property
    */
-  floor_name?: string;
+  floor_name?: string | null;
   /**
    * The result_count property
    */
-  result_count?: number;
+  result_count?: number | null;
   /**
    * The series property
    */
-  series?: SeriesSearchGetResponse_result_series[];
+  series?: SeriesSearchGetResponse_result_series[] | null;
   /**
    * The service_code property
    */
-  service_code?: string;
+  service_code?: string | null;
   /**
    * The service_name property
    */
-  service_name?: string;
+  service_name?: string | null;
   /**
    * The site_code property
    */
-  site_code?: string;
+  site_code?: string | null;
   /**
    * The site_name property
    */
-  site_name?: string;
+  site_name?: string | null;
   /**
    * The status property
    */
-  status?: string;
+  status?: string | null;
   /**
    * The total_count property
    */
-  total_count?: string;
+  total_count?: string | null;
 }
 export interface SeriesSearchGetResponse_result_series
   extends AdditionalDataHolder, Parsable {
@@ -503,19 +521,19 @@ export interface SeriesSearchGetResponse_result_series
   /**
    * The list_url property
    */
-  list_url?: string;
+  list_url?: string | null;
   /**
    * The name property
    */
-  name?: string;
+  name?: string | null;
   /**
    * The ruby property
    */
-  ruby?: string;
+  ruby?: string | null;
   /**
    * The series_id property
    */
-  series_id?: string;
+  series_id?: string | null;
 }
 /**
  * Builds and executes requests for operations under /SeriesSearch

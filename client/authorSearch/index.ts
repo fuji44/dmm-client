@@ -26,11 +26,11 @@ export interface AuthorSearchGetResponse
   /**
    * The request property
    */
-  request?: AuthorSearchGetResponse_request;
+  request?: AuthorSearchGetResponse_request | null;
   /**
    * The result property
    */
-  result?: AuthorSearchGetResponse_result;
+  result?: AuthorSearchGetResponse_result | null;
 }
 export interface AuthorSearchGetResponse_request
   extends AdditionalDataHolder, Parsable {
@@ -41,7 +41,7 @@ export interface AuthorSearchGetResponse_request
   /**
    * The parameters property
    */
-  parameters?: AuthorSearchGetResponse_request_parameters;
+  parameters?: AuthorSearchGetResponse_request_parameters | null;
 }
 export interface AuthorSearchGetResponse_request_parameters
   extends AdditionalDataHolder, Parsable {
@@ -52,27 +52,27 @@ export interface AuthorSearchGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string;
+  affiliate_id?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string;
+  api_id?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string;
+  floor_id?: string | null;
   /**
    * The hits property
    */
-  hits?: string;
+  hits?: string | null;
   /**
    * The initial property
    */
-  initial?: string;
+  initial?: string | null;
   /**
    * The output property
    */
-  output?: string;
+  output?: string | null;
 }
 export interface AuthorSearchGetResponse_result
   extends AdditionalDataHolder, Parsable {
@@ -83,51 +83,51 @@ export interface AuthorSearchGetResponse_result
   /**
    * The author property
    */
-  author?: AuthorSearchGetResponse_result_author[];
+  author?: AuthorSearchGetResponse_result_author[] | null;
   /**
    * The first_position property
    */
-  first_position?: number;
+  first_position?: number | null;
   /**
    * The floor_code property
    */
-  floor_code?: string;
+  floor_code?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string;
+  floor_id?: string | null;
   /**
    * The floor_name property
    */
-  floor_name?: string;
+  floor_name?: string | null;
   /**
    * The result_count property
    */
-  result_count?: number;
+  result_count?: number | null;
   /**
    * The service_code property
    */
-  service_code?: string;
+  service_code?: string | null;
   /**
    * The service_name property
    */
-  service_name?: string;
+  service_name?: string | null;
   /**
    * The site_code property
    */
-  site_code?: string;
+  site_code?: string | null;
   /**
    * The site_name property
    */
-  site_name?: string;
+  site_name?: string | null;
   /**
    * The status property
    */
-  status?: string;
+  status?: string | null;
   /**
    * The total_count property
    */
-  total_count?: string;
+  total_count?: string | null;
 }
 export interface AuthorSearchGetResponse_result_author
   extends AdditionalDataHolder, Parsable {
@@ -138,19 +138,19 @@ export interface AuthorSearchGetResponse_result_author
   /**
    * The author_id property
    */
-  author_id?: string;
+  author_id?: string | null;
   /**
    * The list_url property
    */
-  list_url?: string;
+  list_url?: string | null;
   /**
    * The name property
    */
-  name?: string;
+  name?: string | null;
   /**
    * The ruby property
    */
-  ruby?: string;
+  ruby?: string | null;
 }
 /**
  * Builds and executes requests for operations under /AuthorSearch
@@ -420,19 +420,22 @@ export type GetOutputQueryParameterType =
 // @ts-ignore
 export function serializeAuthorSearchGetResponse(
   writer: SerializationWriter,
-  authorSearchGetResponse: Partial<AuthorSearchGetResponse> | undefined = {},
+  authorSearchGetResponse: Partial<AuthorSearchGetResponse> | undefined | null =
+    {},
 ): void {
-  writer.writeObjectValue<AuthorSearchGetResponse_request>(
-    "request",
-    authorSearchGetResponse.request,
-    serializeAuthorSearchGetResponse_request,
-  );
-  writer.writeObjectValue<AuthorSearchGetResponse_result>(
-    "result",
-    authorSearchGetResponse.result,
-    serializeAuthorSearchGetResponse_result,
-  );
-  writer.writeAdditionalData(authorSearchGetResponse.additionalData);
+  if (authorSearchGetResponse) {
+    writer.writeObjectValue<AuthorSearchGetResponse_request>(
+      "request",
+      authorSearchGetResponse.request,
+      serializeAuthorSearchGetResponse_request,
+    );
+    writer.writeObjectValue<AuthorSearchGetResponse_result>(
+      "result",
+      authorSearchGetResponse.result,
+      serializeAuthorSearchGetResponse_result,
+    );
+    writer.writeAdditionalData(authorSearchGetResponse.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -443,14 +446,17 @@ export function serializeAuthorSearchGetResponse_request(
   writer: SerializationWriter,
   authorSearchGetResponse_request:
     | Partial<AuthorSearchGetResponse_request>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeObjectValue<AuthorSearchGetResponse_request_parameters>(
-    "parameters",
-    authorSearchGetResponse_request.parameters,
-    serializeAuthorSearchGetResponse_request_parameters,
-  );
-  writer.writeAdditionalData(authorSearchGetResponse_request.additionalData);
+  if (authorSearchGetResponse_request) {
+    writer.writeObjectValue<AuthorSearchGetResponse_request_parameters>(
+      "parameters",
+      authorSearchGetResponse_request.parameters,
+      serializeAuthorSearchGetResponse_request_parameters,
+    );
+    writer.writeAdditionalData(authorSearchGetResponse_request.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -461,35 +467,38 @@ export function serializeAuthorSearchGetResponse_request_parameters(
   writer: SerializationWriter,
   authorSearchGetResponse_request_parameters:
     | Partial<AuthorSearchGetResponse_request_parameters>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "affiliate_id",
-    authorSearchGetResponse_request_parameters.affiliate_id,
-  );
-  writer.writeStringValue(
-    "api_id",
-    authorSearchGetResponse_request_parameters.api_id,
-  );
-  writer.writeStringValue(
-    "floor_id",
-    authorSearchGetResponse_request_parameters.floor_id,
-  );
-  writer.writeStringValue(
-    "hits",
-    authorSearchGetResponse_request_parameters.hits,
-  );
-  writer.writeStringValue(
-    "initial",
-    authorSearchGetResponse_request_parameters.initial,
-  );
-  writer.writeStringValue(
-    "output",
-    authorSearchGetResponse_request_parameters.output,
-  );
-  writer.writeAdditionalData(
-    authorSearchGetResponse_request_parameters.additionalData,
-  );
+  if (authorSearchGetResponse_request_parameters) {
+    writer.writeStringValue(
+      "affiliate_id",
+      authorSearchGetResponse_request_parameters.affiliate_id,
+    );
+    writer.writeStringValue(
+      "api_id",
+      authorSearchGetResponse_request_parameters.api_id,
+    );
+    writer.writeStringValue(
+      "floor_id",
+      authorSearchGetResponse_request_parameters.floor_id,
+    );
+    writer.writeStringValue(
+      "hits",
+      authorSearchGetResponse_request_parameters.hits,
+    );
+    writer.writeStringValue(
+      "initial",
+      authorSearchGetResponse_request_parameters.initial,
+    );
+    writer.writeStringValue(
+      "output",
+      authorSearchGetResponse_request_parameters.output,
+    );
+    writer.writeAdditionalData(
+      authorSearchGetResponse_request_parameters.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -500,52 +509,58 @@ export function serializeAuthorSearchGetResponse_result(
   writer: SerializationWriter,
   authorSearchGetResponse_result:
     | Partial<AuthorSearchGetResponse_result>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeCollectionOfObjectValues<AuthorSearchGetResponse_result_author>(
-    "author",
-    authorSearchGetResponse_result.author,
-    serializeAuthorSearchGetResponse_result_author,
-  );
-  writer.writeNumberValue(
-    "first_position",
-    authorSearchGetResponse_result.first_position,
-  );
-  writer.writeStringValue(
-    "floor_code",
-    authorSearchGetResponse_result.floor_code,
-  );
-  writer.writeStringValue("floor_id", authorSearchGetResponse_result.floor_id);
-  writer.writeStringValue(
-    "floor_name",
-    authorSearchGetResponse_result.floor_name,
-  );
-  writer.writeNumberValue(
-    "result_count",
-    authorSearchGetResponse_result.result_count,
-  );
-  writer.writeStringValue(
-    "service_code",
-    authorSearchGetResponse_result.service_code,
-  );
-  writer.writeStringValue(
-    "service_name",
-    authorSearchGetResponse_result.service_name,
-  );
-  writer.writeStringValue(
-    "site_code",
-    authorSearchGetResponse_result.site_code,
-  );
-  writer.writeStringValue(
-    "site_name",
-    authorSearchGetResponse_result.site_name,
-  );
-  writer.writeStringValue("status", authorSearchGetResponse_result.status);
-  writer.writeStringValue(
-    "total_count",
-    authorSearchGetResponse_result.total_count,
-  );
-  writer.writeAdditionalData(authorSearchGetResponse_result.additionalData);
+  if (authorSearchGetResponse_result) {
+    writer.writeCollectionOfObjectValues<AuthorSearchGetResponse_result_author>(
+      "author",
+      authorSearchGetResponse_result.author,
+      serializeAuthorSearchGetResponse_result_author,
+    );
+    writer.writeNumberValue(
+      "first_position",
+      authorSearchGetResponse_result.first_position,
+    );
+    writer.writeStringValue(
+      "floor_code",
+      authorSearchGetResponse_result.floor_code,
+    );
+    writer.writeStringValue(
+      "floor_id",
+      authorSearchGetResponse_result.floor_id,
+    );
+    writer.writeStringValue(
+      "floor_name",
+      authorSearchGetResponse_result.floor_name,
+    );
+    writer.writeNumberValue(
+      "result_count",
+      authorSearchGetResponse_result.result_count,
+    );
+    writer.writeStringValue(
+      "service_code",
+      authorSearchGetResponse_result.service_code,
+    );
+    writer.writeStringValue(
+      "service_name",
+      authorSearchGetResponse_result.service_name,
+    );
+    writer.writeStringValue(
+      "site_code",
+      authorSearchGetResponse_result.site_code,
+    );
+    writer.writeStringValue(
+      "site_name",
+      authorSearchGetResponse_result.site_name,
+    );
+    writer.writeStringValue("status", authorSearchGetResponse_result.status);
+    writer.writeStringValue(
+      "total_count",
+      authorSearchGetResponse_result.total_count,
+    );
+    writer.writeAdditionalData(authorSearchGetResponse_result.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -556,21 +571,24 @@ export function serializeAuthorSearchGetResponse_result_author(
   writer: SerializationWriter,
   authorSearchGetResponse_result_author:
     | Partial<AuthorSearchGetResponse_result_author>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "author_id",
-    authorSearchGetResponse_result_author.author_id,
-  );
-  writer.writeStringValue(
-    "list_url",
-    authorSearchGetResponse_result_author.list_url,
-  );
-  writer.writeStringValue("name", authorSearchGetResponse_result_author.name);
-  writer.writeStringValue("ruby", authorSearchGetResponse_result_author.ruby);
-  writer.writeAdditionalData(
-    authorSearchGetResponse_result_author.additionalData,
-  );
+  if (authorSearchGetResponse_result_author) {
+    writer.writeStringValue(
+      "author_id",
+      authorSearchGetResponse_result_author.author_id,
+    );
+    writer.writeStringValue(
+      "list_url",
+      authorSearchGetResponse_result_author.list_url,
+    );
+    writer.writeStringValue("name", authorSearchGetResponse_result_author.name);
+    writer.writeStringValue("ruby", authorSearchGetResponse_result_author.ruby);
+    writer.writeAdditionalData(
+      authorSearchGetResponse_result_author.additionalData,
+    );
+  }
 }
 /**
  * Uri template for the request builder.

@@ -24,11 +24,11 @@ export interface ActressSearchGetResponse
   /**
    * The request property
    */
-  request?: ActressSearchGetResponse_request;
+  request?: ActressSearchGetResponse_request | null;
   /**
    * The result property
    */
-  result?: ActressSearchGetResponse_result;
+  result?: ActressSearchGetResponse_result | null;
 }
 export interface ActressSearchGetResponse_request
   extends AdditionalDataHolder, Parsable {
@@ -39,7 +39,7 @@ export interface ActressSearchGetResponse_request
   /**
    * The parameters property
    */
-  parameters?: ActressSearchGetResponse_request_parameters;
+  parameters?: ActressSearchGetResponse_request_parameters | null;
 }
 export interface ActressSearchGetResponse_request_parameters
   extends AdditionalDataHolder, Parsable {
@@ -50,42 +50,42 @@ export interface ActressSearchGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string;
+  affiliate_id?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string;
+  api_id?: string | null;
   /**
    * The bust property
    */
-  bust?: string;
+  bust?: string | null;
   /**
    * The hits property
    */
-  hits?: string;
+  hits?: string | null;
   /**
    * The keyword property
    */
-  keyword?: string;
+  keyword?: string | null;
   /**
    * The output property
    */
-  output?: string;
+  output?: string | null;
   /**
    * The sort property
    */
-  sort?: string;
+  sort?: string | null;
   /**
    * The waist property
    */
-  waist?: string;
+  waist?: string | null;
 }
 export interface ActressSearchGetResponse_result
   extends AdditionalDataHolder, Parsable {
   /**
    * The actress property
    */
-  actress?: ActressSearchGetResponse_result_actress[];
+  actress?: ActressSearchGetResponse_result_actress[] | null;
   /**
    * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
    */
@@ -93,19 +93,19 @@ export interface ActressSearchGetResponse_result
   /**
    * The first_position property
    */
-  first_position?: number;
+  first_position?: number | null;
   /**
    * The result_count property
    */
-  result_count?: number;
+  result_count?: number | null;
   /**
    * The status property
    */
-  status?: string;
+  status?: string | null;
   /**
    * The total_count property
    */
-  total_count?: string;
+  total_count?: string | null;
 }
 export interface ActressSearchGetResponse_result_actress
   extends AdditionalDataHolder, Parsable {
@@ -116,59 +116,59 @@ export interface ActressSearchGetResponse_result_actress
   /**
    * The birthday property
    */
-  birthday?: string;
+  birthday?: string | null;
   /**
    * The blood_type property
    */
-  blood_type?: string;
+  blood_type?: string | null;
   /**
    * The bust property
    */
-  bust?: string;
+  bust?: string | null;
   /**
    * The cup property
    */
-  cup?: string;
+  cup?: string | null;
   /**
    * The height property
    */
-  height?: string;
+  height?: string | null;
   /**
    * The hip property
    */
-  hip?: string;
+  hip?: string | null;
   /**
    * The hobby property
    */
-  hobby?: string;
+  hobby?: string | null;
   /**
    * The id property
    */
-  id?: string;
+  id?: string | null;
   /**
    * The imageURL property
    */
-  imageURL?: ActressSearchGetResponse_result_actress_imageURL;
+  imageURL?: ActressSearchGetResponse_result_actress_imageURL | null;
   /**
    * The listURL property
    */
-  listURL?: ActressSearchGetResponse_result_actress_listURL;
+  listURL?: ActressSearchGetResponse_result_actress_listURL | null;
   /**
    * The name property
    */
-  name?: string;
+  name?: string | null;
   /**
    * The prefectures property
    */
-  prefectures?: string;
+  prefectures?: string | null;
   /**
    * The ruby property
    */
-  ruby?: string;
+  ruby?: string | null;
   /**
    * The waist property
    */
-  waist?: string;
+  waist?: string | null;
 }
 export interface ActressSearchGetResponse_result_actress_imageURL
   extends AdditionalDataHolder, Parsable {
@@ -179,11 +179,11 @@ export interface ActressSearchGetResponse_result_actress_imageURL
   /**
    * The large property
    */
-  large?: string;
+  large?: string | null;
   /**
    * The small property
    */
-  small?: string;
+  small?: string | null;
 }
 export interface ActressSearchGetResponse_result_actress_listURL
   extends AdditionalDataHolder, Parsable {
@@ -194,23 +194,23 @@ export interface ActressSearchGetResponse_result_actress_listURL
   /**
    * The digital property
    */
-  digital?: string;
+  digital?: string | null;
   /**
    * The mono property
    */
-  mono?: string;
+  mono?: string | null;
   /**
    * The monthly property
    */
-  monthly?: string;
+  monthly?: string | null;
   /**
    * The ppm property
    */
-  ppm?: string;
+  ppm?: string | null;
   /**
    * The rental property
    */
-  rental?: string;
+  rental?: string | null;
 }
 /**
  * Builds and executes requests for operations under /ActressSearch
@@ -625,19 +625,24 @@ export type GetSortQueryParameterType =
 // @ts-ignore
 export function serializeActressSearchGetResponse(
   writer: SerializationWriter,
-  actressSearchGetResponse: Partial<ActressSearchGetResponse> | undefined = {},
+  actressSearchGetResponse:
+    | Partial<ActressSearchGetResponse>
+    | undefined
+    | null = {},
 ): void {
-  writer.writeObjectValue<ActressSearchGetResponse_request>(
-    "request",
-    actressSearchGetResponse.request,
-    serializeActressSearchGetResponse_request,
-  );
-  writer.writeObjectValue<ActressSearchGetResponse_result>(
-    "result",
-    actressSearchGetResponse.result,
-    serializeActressSearchGetResponse_result,
-  );
-  writer.writeAdditionalData(actressSearchGetResponse.additionalData);
+  if (actressSearchGetResponse) {
+    writer.writeObjectValue<ActressSearchGetResponse_request>(
+      "request",
+      actressSearchGetResponse.request,
+      serializeActressSearchGetResponse_request,
+    );
+    writer.writeObjectValue<ActressSearchGetResponse_result>(
+      "result",
+      actressSearchGetResponse.result,
+      serializeActressSearchGetResponse_result,
+    );
+    writer.writeAdditionalData(actressSearchGetResponse.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -648,14 +653,17 @@ export function serializeActressSearchGetResponse_request(
   writer: SerializationWriter,
   actressSearchGetResponse_request:
     | Partial<ActressSearchGetResponse_request>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeObjectValue<ActressSearchGetResponse_request_parameters>(
-    "parameters",
-    actressSearchGetResponse_request.parameters,
-    serializeActressSearchGetResponse_request_parameters,
-  );
-  writer.writeAdditionalData(actressSearchGetResponse_request.additionalData);
+  if (actressSearchGetResponse_request) {
+    writer.writeObjectValue<ActressSearchGetResponse_request_parameters>(
+      "parameters",
+      actressSearchGetResponse_request.parameters,
+      serializeActressSearchGetResponse_request_parameters,
+    );
+    writer.writeAdditionalData(actressSearchGetResponse_request.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -666,43 +674,46 @@ export function serializeActressSearchGetResponse_request_parameters(
   writer: SerializationWriter,
   actressSearchGetResponse_request_parameters:
     | Partial<ActressSearchGetResponse_request_parameters>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "affiliate_id",
-    actressSearchGetResponse_request_parameters.affiliate_id,
-  );
-  writer.writeStringValue(
-    "api_id",
-    actressSearchGetResponse_request_parameters.api_id,
-  );
-  writer.writeStringValue(
-    "bust",
-    actressSearchGetResponse_request_parameters.bust,
-  );
-  writer.writeStringValue(
-    "hits",
-    actressSearchGetResponse_request_parameters.hits,
-  );
-  writer.writeStringValue(
-    "keyword",
-    actressSearchGetResponse_request_parameters.keyword,
-  );
-  writer.writeStringValue(
-    "output",
-    actressSearchGetResponse_request_parameters.output,
-  );
-  writer.writeStringValue(
-    "sort",
-    actressSearchGetResponse_request_parameters.sort,
-  );
-  writer.writeStringValue(
-    "waist",
-    actressSearchGetResponse_request_parameters.waist,
-  );
-  writer.writeAdditionalData(
-    actressSearchGetResponse_request_parameters.additionalData,
-  );
+  if (actressSearchGetResponse_request_parameters) {
+    writer.writeStringValue(
+      "affiliate_id",
+      actressSearchGetResponse_request_parameters.affiliate_id,
+    );
+    writer.writeStringValue(
+      "api_id",
+      actressSearchGetResponse_request_parameters.api_id,
+    );
+    writer.writeStringValue(
+      "bust",
+      actressSearchGetResponse_request_parameters.bust,
+    );
+    writer.writeStringValue(
+      "hits",
+      actressSearchGetResponse_request_parameters.hits,
+    );
+    writer.writeStringValue(
+      "keyword",
+      actressSearchGetResponse_request_parameters.keyword,
+    );
+    writer.writeStringValue(
+      "output",
+      actressSearchGetResponse_request_parameters.output,
+    );
+    writer.writeStringValue(
+      "sort",
+      actressSearchGetResponse_request_parameters.sort,
+    );
+    writer.writeStringValue(
+      "waist",
+      actressSearchGetResponse_request_parameters.waist,
+    );
+    writer.writeAdditionalData(
+      actressSearchGetResponse_request_parameters.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -713,27 +724,32 @@ export function serializeActressSearchGetResponse_result(
   writer: SerializationWriter,
   actressSearchGetResponse_result:
     | Partial<ActressSearchGetResponse_result>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeCollectionOfObjectValues<ActressSearchGetResponse_result_actress>(
-    "actress",
-    actressSearchGetResponse_result.actress,
-    serializeActressSearchGetResponse_result_actress,
-  );
-  writer.writeNumberValue(
-    "first_position",
-    actressSearchGetResponse_result.first_position,
-  );
-  writer.writeNumberValue(
-    "result_count",
-    actressSearchGetResponse_result.result_count,
-  );
-  writer.writeStringValue("status", actressSearchGetResponse_result.status);
-  writer.writeStringValue(
-    "total_count",
-    actressSearchGetResponse_result.total_count,
-  );
-  writer.writeAdditionalData(actressSearchGetResponse_result.additionalData);
+  if (actressSearchGetResponse_result) {
+    writer.writeCollectionOfObjectValues<
+      ActressSearchGetResponse_result_actress
+    >(
+      "actress",
+      actressSearchGetResponse_result.actress,
+      serializeActressSearchGetResponse_result_actress,
+    );
+    writer.writeNumberValue(
+      "first_position",
+      actressSearchGetResponse_result.first_position,
+    );
+    writer.writeNumberValue(
+      "result_count",
+      actressSearchGetResponse_result.result_count,
+    );
+    writer.writeStringValue("status", actressSearchGetResponse_result.status);
+    writer.writeStringValue(
+      "total_count",
+      actressSearchGetResponse_result.total_count,
+    );
+    writer.writeAdditionalData(actressSearchGetResponse_result.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -744,51 +760,63 @@ export function serializeActressSearchGetResponse_result_actress(
   writer: SerializationWriter,
   actressSearchGetResponse_result_actress:
     | Partial<ActressSearchGetResponse_result_actress>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "birthday",
-    actressSearchGetResponse_result_actress.birthday,
-  );
-  writer.writeStringValue(
-    "blood_type",
-    actressSearchGetResponse_result_actress.blood_type,
-  );
-  writer.writeStringValue("bust", actressSearchGetResponse_result_actress.bust);
-  writer.writeStringValue("cup", actressSearchGetResponse_result_actress.cup);
-  writer.writeStringValue(
-    "height",
-    actressSearchGetResponse_result_actress.height,
-  );
-  writer.writeStringValue("hip", actressSearchGetResponse_result_actress.hip);
-  writer.writeStringValue(
-    "hobby",
-    actressSearchGetResponse_result_actress.hobby,
-  );
-  writer.writeStringValue("id", actressSearchGetResponse_result_actress.id);
-  writer.writeObjectValue<ActressSearchGetResponse_result_actress_imageURL>(
-    "imageURL",
-    actressSearchGetResponse_result_actress.imageURL,
-    serializeActressSearchGetResponse_result_actress_imageURL,
-  );
-  writer.writeObjectValue<ActressSearchGetResponse_result_actress_listURL>(
-    "listURL",
-    actressSearchGetResponse_result_actress.listURL,
-    serializeActressSearchGetResponse_result_actress_listURL,
-  );
-  writer.writeStringValue("name", actressSearchGetResponse_result_actress.name);
-  writer.writeStringValue(
-    "prefectures",
-    actressSearchGetResponse_result_actress.prefectures,
-  );
-  writer.writeStringValue("ruby", actressSearchGetResponse_result_actress.ruby);
-  writer.writeStringValue(
-    "waist",
-    actressSearchGetResponse_result_actress.waist,
-  );
-  writer.writeAdditionalData(
-    actressSearchGetResponse_result_actress.additionalData,
-  );
+  if (actressSearchGetResponse_result_actress) {
+    writer.writeStringValue(
+      "birthday",
+      actressSearchGetResponse_result_actress.birthday,
+    );
+    writer.writeStringValue(
+      "blood_type",
+      actressSearchGetResponse_result_actress.blood_type,
+    );
+    writer.writeStringValue(
+      "bust",
+      actressSearchGetResponse_result_actress.bust,
+    );
+    writer.writeStringValue("cup", actressSearchGetResponse_result_actress.cup);
+    writer.writeStringValue(
+      "height",
+      actressSearchGetResponse_result_actress.height,
+    );
+    writer.writeStringValue("hip", actressSearchGetResponse_result_actress.hip);
+    writer.writeStringValue(
+      "hobby",
+      actressSearchGetResponse_result_actress.hobby,
+    );
+    writer.writeStringValue("id", actressSearchGetResponse_result_actress.id);
+    writer.writeObjectValue<ActressSearchGetResponse_result_actress_imageURL>(
+      "imageURL",
+      actressSearchGetResponse_result_actress.imageURL,
+      serializeActressSearchGetResponse_result_actress_imageURL,
+    );
+    writer.writeObjectValue<ActressSearchGetResponse_result_actress_listURL>(
+      "listURL",
+      actressSearchGetResponse_result_actress.listURL,
+      serializeActressSearchGetResponse_result_actress_listURL,
+    );
+    writer.writeStringValue(
+      "name",
+      actressSearchGetResponse_result_actress.name,
+    );
+    writer.writeStringValue(
+      "prefectures",
+      actressSearchGetResponse_result_actress.prefectures,
+    );
+    writer.writeStringValue(
+      "ruby",
+      actressSearchGetResponse_result_actress.ruby,
+    );
+    writer.writeStringValue(
+      "waist",
+      actressSearchGetResponse_result_actress.waist,
+    );
+    writer.writeAdditionalData(
+      actressSearchGetResponse_result_actress.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -799,19 +827,22 @@ export function serializeActressSearchGetResponse_result_actress_imageURL(
   writer: SerializationWriter,
   actressSearchGetResponse_result_actress_imageURL:
     | Partial<ActressSearchGetResponse_result_actress_imageURL>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "large",
-    actressSearchGetResponse_result_actress_imageURL.large,
-  );
-  writer.writeStringValue(
-    "small",
-    actressSearchGetResponse_result_actress_imageURL.small,
-  );
-  writer.writeAdditionalData(
-    actressSearchGetResponse_result_actress_imageURL.additionalData,
-  );
+  if (actressSearchGetResponse_result_actress_imageURL) {
+    writer.writeStringValue(
+      "large",
+      actressSearchGetResponse_result_actress_imageURL.large,
+    );
+    writer.writeStringValue(
+      "small",
+      actressSearchGetResponse_result_actress_imageURL.small,
+    );
+    writer.writeAdditionalData(
+      actressSearchGetResponse_result_actress_imageURL.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -822,31 +853,34 @@ export function serializeActressSearchGetResponse_result_actress_listURL(
   writer: SerializationWriter,
   actressSearchGetResponse_result_actress_listURL:
     | Partial<ActressSearchGetResponse_result_actress_listURL>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "digital",
-    actressSearchGetResponse_result_actress_listURL.digital,
-  );
-  writer.writeStringValue(
-    "mono",
-    actressSearchGetResponse_result_actress_listURL.mono,
-  );
-  writer.writeStringValue(
-    "monthly",
-    actressSearchGetResponse_result_actress_listURL.monthly,
-  );
-  writer.writeStringValue(
-    "ppm",
-    actressSearchGetResponse_result_actress_listURL.ppm,
-  );
-  writer.writeStringValue(
-    "rental",
-    actressSearchGetResponse_result_actress_listURL.rental,
-  );
-  writer.writeAdditionalData(
-    actressSearchGetResponse_result_actress_listURL.additionalData,
-  );
+  if (actressSearchGetResponse_result_actress_listURL) {
+    writer.writeStringValue(
+      "digital",
+      actressSearchGetResponse_result_actress_listURL.digital,
+    );
+    writer.writeStringValue(
+      "mono",
+      actressSearchGetResponse_result_actress_listURL.mono,
+    );
+    writer.writeStringValue(
+      "monthly",
+      actressSearchGetResponse_result_actress_listURL.monthly,
+    );
+    writer.writeStringValue(
+      "ppm",
+      actressSearchGetResponse_result_actress_listURL.ppm,
+    );
+    writer.writeStringValue(
+      "rental",
+      actressSearchGetResponse_result_actress_listURL.rental,
+    );
+    writer.writeAdditionalData(
+      actressSearchGetResponse_result_actress_listURL.additionalData,
+    );
+  }
 }
 /**
  * Uri template for the request builder.

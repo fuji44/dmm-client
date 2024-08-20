@@ -255,11 +255,11 @@ export interface FloorListGetResponse extends AdditionalDataHolder, Parsable {
   /**
    * The request property
    */
-  request?: FloorListGetResponse_request;
+  request?: FloorListGetResponse_request | null;
   /**
    * The result property
    */
-  result?: FloorListGetResponse_result;
+  result?: FloorListGetResponse_result | null;
 }
 export interface FloorListGetResponse_request
   extends AdditionalDataHolder, Parsable {
@@ -270,7 +270,7 @@ export interface FloorListGetResponse_request
   /**
    * The parameters property
    */
-  parameters?: FloorListGetResponse_request_parameters;
+  parameters?: FloorListGetResponse_request_parameters | null;
 }
 export interface FloorListGetResponse_request_parameters
   extends AdditionalDataHolder, Parsable {
@@ -281,19 +281,19 @@ export interface FloorListGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string;
+  affiliate_id?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string;
+  api_id?: string | null;
   /**
    * The callback property
    */
-  callback?: string;
+  callback?: string | null;
   /**
    * The output property
    */
-  output?: string;
+  output?: string | null;
 }
 export interface FloorListGetResponse_result
   extends AdditionalDataHolder, Parsable {
@@ -304,7 +304,7 @@ export interface FloorListGetResponse_result
   /**
    * The site property
    */
-  site?: FloorListGetResponse_result_site[];
+  site?: FloorListGetResponse_result_site[] | null;
 }
 export interface FloorListGetResponse_result_site
   extends AdditionalDataHolder, Parsable {
@@ -315,15 +315,15 @@ export interface FloorListGetResponse_result_site
   /**
    * The code property
    */
-  code?: string;
+  code?: string | null;
   /**
    * The name property
    */
-  name?: string;
+  name?: string | null;
   /**
    * The service property
    */
-  service?: FloorListGetResponse_result_site_service[];
+  service?: FloorListGetResponse_result_site_service[] | null;
 }
 export interface FloorListGetResponse_result_site_service
   extends AdditionalDataHolder, Parsable {
@@ -334,15 +334,15 @@ export interface FloorListGetResponse_result_site_service
   /**
    * The code property
    */
-  code?: string;
+  code?: string | null;
   /**
    * The floor property
    */
-  floor?: FloorListGetResponse_result_site_service_floor[];
+  floor?: FloorListGetResponse_result_site_service_floor[] | null;
   /**
    * The name property
    */
-  name?: string;
+  name?: string | null;
 }
 export interface FloorListGetResponse_result_site_service_floor
   extends AdditionalDataHolder, Parsable {
@@ -353,15 +353,15 @@ export interface FloorListGetResponse_result_site_service_floor
   /**
    * The code property
    */
-  code?: string;
+  code?: string | null;
   /**
    * The id property
    */
-  id?: string;
+  id?: string | null;
   /**
    * The name property
    */
-  name?: string;
+  name?: string | null;
 }
 /**
  * Builds and executes requests for operations under /FloorList
@@ -413,19 +413,21 @@ export type GetOutputQueryParameterType =
 // @ts-ignore
 export function serializeFloorListGetResponse(
   writer: SerializationWriter,
-  floorListGetResponse: Partial<FloorListGetResponse> | undefined = {},
+  floorListGetResponse: Partial<FloorListGetResponse> | undefined | null = {},
 ): void {
-  writer.writeObjectValue<FloorListGetResponse_request>(
-    "request",
-    floorListGetResponse.request,
-    serializeFloorListGetResponse_request,
-  );
-  writer.writeObjectValue<FloorListGetResponse_result>(
-    "result",
-    floorListGetResponse.result,
-    serializeFloorListGetResponse_result,
-  );
-  writer.writeAdditionalData(floorListGetResponse.additionalData);
+  if (floorListGetResponse) {
+    writer.writeObjectValue<FloorListGetResponse_request>(
+      "request",
+      floorListGetResponse.request,
+      serializeFloorListGetResponse_request,
+    );
+    writer.writeObjectValue<FloorListGetResponse_result>(
+      "result",
+      floorListGetResponse.result,
+      serializeFloorListGetResponse_result,
+    );
+    writer.writeAdditionalData(floorListGetResponse.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -436,14 +438,17 @@ export function serializeFloorListGetResponse_request(
   writer: SerializationWriter,
   floorListGetResponse_request:
     | Partial<FloorListGetResponse_request>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeObjectValue<FloorListGetResponse_request_parameters>(
-    "parameters",
-    floorListGetResponse_request.parameters,
-    serializeFloorListGetResponse_request_parameters,
-  );
-  writer.writeAdditionalData(floorListGetResponse_request.additionalData);
+  if (floorListGetResponse_request) {
+    writer.writeObjectValue<FloorListGetResponse_request_parameters>(
+      "parameters",
+      floorListGetResponse_request.parameters,
+      serializeFloorListGetResponse_request_parameters,
+    );
+    writer.writeAdditionalData(floorListGetResponse_request.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -454,27 +459,30 @@ export function serializeFloorListGetResponse_request_parameters(
   writer: SerializationWriter,
   floorListGetResponse_request_parameters:
     | Partial<FloorListGetResponse_request_parameters>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "affiliate_id",
-    floorListGetResponse_request_parameters.affiliate_id,
-  );
-  writer.writeStringValue(
-    "api_id",
-    floorListGetResponse_request_parameters.api_id,
-  );
-  writer.writeStringValue(
-    "callback",
-    floorListGetResponse_request_parameters.callback,
-  );
-  writer.writeStringValue(
-    "output",
-    floorListGetResponse_request_parameters.output,
-  );
-  writer.writeAdditionalData(
-    floorListGetResponse_request_parameters.additionalData,
-  );
+  if (floorListGetResponse_request_parameters) {
+    writer.writeStringValue(
+      "affiliate_id",
+      floorListGetResponse_request_parameters.affiliate_id,
+    );
+    writer.writeStringValue(
+      "api_id",
+      floorListGetResponse_request_parameters.api_id,
+    );
+    writer.writeStringValue(
+      "callback",
+      floorListGetResponse_request_parameters.callback,
+    );
+    writer.writeStringValue(
+      "output",
+      floorListGetResponse_request_parameters.output,
+    );
+    writer.writeAdditionalData(
+      floorListGetResponse_request_parameters.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -485,14 +493,17 @@ export function serializeFloorListGetResponse_result(
   writer: SerializationWriter,
   floorListGetResponse_result:
     | Partial<FloorListGetResponse_result>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeCollectionOfObjectValues<FloorListGetResponse_result_site>(
-    "site",
-    floorListGetResponse_result.site,
-    serializeFloorListGetResponse_result_site,
-  );
-  writer.writeAdditionalData(floorListGetResponse_result.additionalData);
+  if (floorListGetResponse_result) {
+    writer.writeCollectionOfObjectValues<FloorListGetResponse_result_site>(
+      "site",
+      floorListGetResponse_result.site,
+      serializeFloorListGetResponse_result_site,
+    );
+    writer.writeAdditionalData(floorListGetResponse_result.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -503,18 +514,21 @@ export function serializeFloorListGetResponse_result_site(
   writer: SerializationWriter,
   floorListGetResponse_result_site:
     | Partial<FloorListGetResponse_result_site>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue("code", floorListGetResponse_result_site.code);
-  writer.writeStringValue("name", floorListGetResponse_result_site.name);
-  writer.writeCollectionOfObjectValues<
-    FloorListGetResponse_result_site_service
-  >(
-    "service",
-    floorListGetResponse_result_site.service,
-    serializeFloorListGetResponse_result_site_service,
-  );
-  writer.writeAdditionalData(floorListGetResponse_result_site.additionalData);
+  if (floorListGetResponse_result_site) {
+    writer.writeStringValue("code", floorListGetResponse_result_site.code);
+    writer.writeStringValue("name", floorListGetResponse_result_site.name);
+    writer.writeCollectionOfObjectValues<
+      FloorListGetResponse_result_site_service
+    >(
+      "service",
+      floorListGetResponse_result_site.service,
+      serializeFloorListGetResponse_result_site_service,
+    );
+    writer.writeAdditionalData(floorListGetResponse_result_site.additionalData);
+  }
 }
 /**
  * Serializes information the current object
@@ -525,26 +539,29 @@ export function serializeFloorListGetResponse_result_site_service(
   writer: SerializationWriter,
   floorListGetResponse_result_site_service:
     | Partial<FloorListGetResponse_result_site_service>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "code",
-    floorListGetResponse_result_site_service.code,
-  );
-  writer.writeCollectionOfObjectValues<
-    FloorListGetResponse_result_site_service_floor
-  >(
-    "floor",
-    floorListGetResponse_result_site_service.floor,
-    serializeFloorListGetResponse_result_site_service_floor,
-  );
-  writer.writeStringValue(
-    "name",
-    floorListGetResponse_result_site_service.name,
-  );
-  writer.writeAdditionalData(
-    floorListGetResponse_result_site_service.additionalData,
-  );
+  if (floorListGetResponse_result_site_service) {
+    writer.writeStringValue(
+      "code",
+      floorListGetResponse_result_site_service.code,
+    );
+    writer.writeCollectionOfObjectValues<
+      FloorListGetResponse_result_site_service_floor
+    >(
+      "floor",
+      floorListGetResponse_result_site_service.floor,
+      serializeFloorListGetResponse_result_site_service_floor,
+    );
+    writer.writeStringValue(
+      "name",
+      floorListGetResponse_result_site_service.name,
+    );
+    writer.writeAdditionalData(
+      floorListGetResponse_result_site_service.additionalData,
+    );
+  }
 }
 /**
  * Serializes information the current object
@@ -555,23 +572,26 @@ export function serializeFloorListGetResponse_result_site_service_floor(
   writer: SerializationWriter,
   floorListGetResponse_result_site_service_floor:
     | Partial<FloorListGetResponse_result_site_service_floor>
-    | undefined = {},
+    | undefined
+    | null = {},
 ): void {
-  writer.writeStringValue(
-    "code",
-    floorListGetResponse_result_site_service_floor.code,
-  );
-  writer.writeStringValue(
-    "id",
-    floorListGetResponse_result_site_service_floor.id,
-  );
-  writer.writeStringValue(
-    "name",
-    floorListGetResponse_result_site_service_floor.name,
-  );
-  writer.writeAdditionalData(
-    floorListGetResponse_result_site_service_floor.additionalData,
-  );
+  if (floorListGetResponse_result_site_service_floor) {
+    writer.writeStringValue(
+      "code",
+      floorListGetResponse_result_site_service_floor.code,
+    );
+    writer.writeStringValue(
+      "id",
+      floorListGetResponse_result_site_service_floor.id,
+    );
+    writer.writeStringValue(
+      "name",
+      floorListGetResponse_result_site_service_floor.name,
+    );
+    writer.writeAdditionalData(
+      floorListGetResponse_result_site_service_floor.additionalData,
+    );
+  }
 }
 /**
  * Uri template for the request builder.
