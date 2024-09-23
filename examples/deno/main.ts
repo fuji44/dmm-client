@@ -5,7 +5,7 @@
  * - DMM_API_ID: The API ID for accessing the DMM API.
  * - DMM_AFFILIATE_ID: The affiliate ID for tracking affiliate referrals.
  */
-import { FetchRequestAdapter } from "npm:@microsoft/kiota-http-fetchlibrary@1.0.0-preview.58";
+import { FetchRequestAdapter } from "npm:@microsoft/kiota-http-fetchlibrary@1.0.0-preview.62";
 import {
   ApiKeyLocation,
   createDMMClient,
