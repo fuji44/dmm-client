@@ -77,7 +77,10 @@ export function createDMMClient(requestAdapter: RequestAdapter): DMMClient {
   registerDefaultDeserializer(JsonParseNodeFactory);
   registerDefaultDeserializer(TextParseNodeFactory);
   registerDefaultDeserializer(FormParseNodeFactory);
-  if (requestAdapter.baseUrl === undefined || requestAdapter.baseUrl === "") {
+  if (
+    requestAdapter.baseUrl === undefined || requestAdapter.baseUrl === null ||
+    requestAdapter.baseUrl === ""
+  ) {
     requestAdapter.baseUrl = "https://api.dmm.com/affiliate/v3";
   }
   const pathParameters: Record<string, unknown> = {

@@ -120,14 +120,14 @@ export function deserializeIntoSeriesSearchGetResponse_request_parameters(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "affiliate_id": (n) => {
-      seriesSearchGetResponse_request_parameters.affiliate_id = n
+      seriesSearchGetResponse_request_parameters.affiliateId = n
         .getStringValue();
     },
     "api_id": (n) => {
-      seriesSearchGetResponse_request_parameters.api_id = n.getStringValue();
+      seriesSearchGetResponse_request_parameters.apiId = n.getStringValue();
     },
     "floor_id": (n) => {
-      seriesSearchGetResponse_request_parameters.floor_id = n.getStringValue();
+      seriesSearchGetResponse_request_parameters.floorId = n.getStringValue();
     },
     "hits": (n) => {
       seriesSearchGetResponse_request_parameters.hits = n.getStringValue();
@@ -152,19 +152,19 @@ export function deserializeIntoSeriesSearchGetResponse_result(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "first_position": (n) => {
-      seriesSearchGetResponse_result.first_position = n.getNumberValue();
+      seriesSearchGetResponse_result.firstPosition = n.getNumberValue();
     },
     "floor_code": (n) => {
-      seriesSearchGetResponse_result.floor_code = n.getStringValue();
+      seriesSearchGetResponse_result.floorCode = n.getStringValue();
     },
     "floor_id": (n) => {
-      seriesSearchGetResponse_result.floor_id = n.getStringValue();
+      seriesSearchGetResponse_result.floorId = n.getStringValue();
     },
     "floor_name": (n) => {
-      seriesSearchGetResponse_result.floor_name = n.getStringValue();
+      seriesSearchGetResponse_result.floorName = n.getStringValue();
     },
     "result_count": (n) => {
-      seriesSearchGetResponse_result.result_count = n.getNumberValue();
+      seriesSearchGetResponse_result.resultCount = n.getNumberValue();
     },
     "series": (n) => {
       seriesSearchGetResponse_result.series = n.getCollectionOfObjectValues<
@@ -172,22 +172,22 @@ export function deserializeIntoSeriesSearchGetResponse_result(
       >(createSeriesSearchGetResponse_result_seriesFromDiscriminatorValue);
     },
     "service_code": (n) => {
-      seriesSearchGetResponse_result.service_code = n.getStringValue();
+      seriesSearchGetResponse_result.serviceCode = n.getStringValue();
     },
     "service_name": (n) => {
-      seriesSearchGetResponse_result.service_name = n.getStringValue();
+      seriesSearchGetResponse_result.serviceName = n.getStringValue();
     },
     "site_code": (n) => {
-      seriesSearchGetResponse_result.site_code = n.getStringValue();
+      seriesSearchGetResponse_result.siteCode = n.getStringValue();
     },
     "site_name": (n) => {
-      seriesSearchGetResponse_result.site_name = n.getStringValue();
+      seriesSearchGetResponse_result.siteName = n.getStringValue();
     },
     "status": (n) => {
       seriesSearchGetResponse_result.status = n.getStringValue();
     },
     "total_count": (n) => {
-      seriesSearchGetResponse_result.total_count = n.getStringValue();
+      seriesSearchGetResponse_result.totalCount = n.getStringValue();
     },
   };
 }
@@ -203,7 +203,7 @@ export function deserializeIntoSeriesSearchGetResponse_result_series(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "list_url": (n) => {
-      seriesSearchGetResponse_result_series.list_url = n.getStringValue();
+      seriesSearchGetResponse_result_series.listUrl = n.getStringValue();
     },
     "name": (n) => {
       seriesSearchGetResponse_result_series.name = n.getStringValue();
@@ -212,7 +212,7 @@ export function deserializeIntoSeriesSearchGetResponse_result_series(
       seriesSearchGetResponse_result_series.ruby = n.getStringValue();
     },
     "series_id": (n) => {
-      seriesSearchGetResponse_result_series.series_id = n.getStringValue();
+      seriesSearchGetResponse_result_series.seriesId = n.getStringValue();
     },
   };
 }
@@ -280,15 +280,15 @@ export function serializeSeriesSearchGetResponse_request_parameters(
   if (seriesSearchGetResponse_request_parameters) {
     writer.writeStringValue(
       "affiliate_id",
-      seriesSearchGetResponse_request_parameters.affiliate_id,
+      seriesSearchGetResponse_request_parameters.affiliateId,
     );
     writer.writeStringValue(
       "api_id",
-      seriesSearchGetResponse_request_parameters.api_id,
+      seriesSearchGetResponse_request_parameters.apiId,
     );
     writer.writeStringValue(
       "floor_id",
-      seriesSearchGetResponse_request_parameters.floor_id,
+      seriesSearchGetResponse_request_parameters.floorId,
     );
     writer.writeStringValue(
       "hits",
@@ -322,23 +322,20 @@ export function serializeSeriesSearchGetResponse_result(
   if (seriesSearchGetResponse_result) {
     writer.writeNumberValue(
       "first_position",
-      seriesSearchGetResponse_result.first_position,
+      seriesSearchGetResponse_result.firstPosition,
     );
     writer.writeStringValue(
       "floor_code",
-      seriesSearchGetResponse_result.floor_code,
+      seriesSearchGetResponse_result.floorCode,
     );
-    writer.writeStringValue(
-      "floor_id",
-      seriesSearchGetResponse_result.floor_id,
-    );
+    writer.writeStringValue("floor_id", seriesSearchGetResponse_result.floorId);
     writer.writeStringValue(
       "floor_name",
-      seriesSearchGetResponse_result.floor_name,
+      seriesSearchGetResponse_result.floorName,
     );
     writer.writeNumberValue(
       "result_count",
-      seriesSearchGetResponse_result.result_count,
+      seriesSearchGetResponse_result.resultCount,
     );
     writer.writeCollectionOfObjectValues<SeriesSearchGetResponse_result_series>(
       "series",
@@ -347,24 +344,24 @@ export function serializeSeriesSearchGetResponse_result(
     );
     writer.writeStringValue(
       "service_code",
-      seriesSearchGetResponse_result.service_code,
+      seriesSearchGetResponse_result.serviceCode,
     );
     writer.writeStringValue(
       "service_name",
-      seriesSearchGetResponse_result.service_name,
+      seriesSearchGetResponse_result.serviceName,
     );
     writer.writeStringValue(
       "site_code",
-      seriesSearchGetResponse_result.site_code,
+      seriesSearchGetResponse_result.siteCode,
     );
     writer.writeStringValue(
       "site_name",
-      seriesSearchGetResponse_result.site_name,
+      seriesSearchGetResponse_result.siteName,
     );
     writer.writeStringValue("status", seriesSearchGetResponse_result.status);
     writer.writeStringValue(
       "total_count",
-      seriesSearchGetResponse_result.total_count,
+      seriesSearchGetResponse_result.totalCount,
     );
     writer.writeAdditionalData(seriesSearchGetResponse_result.additionalData);
   }
@@ -384,13 +381,13 @@ export function serializeSeriesSearchGetResponse_result_series(
   if (seriesSearchGetResponse_result_series) {
     writer.writeStringValue(
       "list_url",
-      seriesSearchGetResponse_result_series.list_url,
+      seriesSearchGetResponse_result_series.listUrl,
     );
     writer.writeStringValue("name", seriesSearchGetResponse_result_series.name);
     writer.writeStringValue("ruby", seriesSearchGetResponse_result_series.ruby);
     writer.writeStringValue(
       "series_id",
-      seriesSearchGetResponse_result_series.series_id,
+      seriesSearchGetResponse_result_series.seriesId,
     );
     writer.writeAdditionalData(
       seriesSearchGetResponse_result_series.additionalData,
@@ -435,15 +432,15 @@ export interface SeriesSearchGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string | null;
+  affiliateId?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string | null;
+  apiId?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string | null;
+  floorId?: string | null;
   /**
    * The hits property
    */
@@ -466,23 +463,23 @@ export interface SeriesSearchGetResponse_result
   /**
    * The first_position property
    */
-  first_position?: number | null;
+  firstPosition?: number | null;
   /**
    * The floor_code property
    */
-  floor_code?: string | null;
+  floorCode?: string | null;
   /**
    * The floor_id property
    */
-  floor_id?: string | null;
+  floorId?: string | null;
   /**
    * The floor_name property
    */
-  floor_name?: string | null;
+  floorName?: string | null;
   /**
    * The result_count property
    */
-  result_count?: number | null;
+  resultCount?: number | null;
   /**
    * The series property
    */
@@ -490,19 +487,19 @@ export interface SeriesSearchGetResponse_result
   /**
    * The service_code property
    */
-  service_code?: string | null;
+  serviceCode?: string | null;
   /**
    * The service_name property
    */
-  service_name?: string | null;
+  serviceName?: string | null;
   /**
    * The site_code property
    */
-  site_code?: string | null;
+  siteCode?: string | null;
   /**
    * The site_name property
    */
-  site_name?: string | null;
+  siteName?: string | null;
   /**
    * The status property
    */
@@ -510,7 +507,7 @@ export interface SeriesSearchGetResponse_result
   /**
    * The total_count property
    */
-  total_count?: string | null;
+  totalCount?: string | null;
 }
 export interface SeriesSearchGetResponse_result_series
   extends AdditionalDataHolder, Parsable {
@@ -521,7 +518,7 @@ export interface SeriesSearchGetResponse_result_series
   /**
    * The list_url property
    */
-  list_url?: string | null;
+  listUrl?: string | null;
   /**
    * The name property
    */
@@ -533,7 +530,7 @@ export interface SeriesSearchGetResponse_result_series
   /**
    * The series_id property
    */
-  series_id?: string | null;
+  seriesId?: string | null;
 }
 /**
  * Builds and executes requests for operations under /SeriesSearch

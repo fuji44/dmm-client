@@ -2,7 +2,7 @@
   "descriptionHash": "EEE05EC1A4E50369BEDFBDD772408898097110944B7B3495F7309B5E679329205260986F99FC1D7B8FA66737F7822296D533878626D90F20A7D6BEB021E89FE3",
   "descriptionLocation": "../spec/dmm.oas.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.18.0-preview.202408150001",
+  "kiotaVersion": "1.18.0",
   "clientClassName": "DMMClient",
   "clientNamespaceName": "DMMSDK",
   "language": "TypeScript",

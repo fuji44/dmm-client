@@ -406,10 +406,10 @@ export function deserializeIntoItemListGetResponse_request_parameters(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "affiliate_id": (n) => {
-      itemListGetResponse_request_parameters.affiliate_id = n.getStringValue();
+      itemListGetResponse_request_parameters.affiliateId = n.getStringValue();
     },
     "api_id": (n) => {
-      itemListGetResponse_request_parameters.api_id = n.getStringValue();
+      itemListGetResponse_request_parameters.apiId = n.getStringValue();
     },
     "floor": (n) => {
       itemListGetResponse_request_parameters.floor = n.getStringValue();
@@ -436,7 +436,7 @@ export function deserializeIntoItemListGetResponse_result(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "first_position": (n) => {
-      itemListGetResponse_result.first_position = n.getNumberValue();
+      itemListGetResponse_result.firstPosition = n.getNumberValue();
     },
     "items": (n) => {
       itemListGetResponse_result.items = n.getCollectionOfObjectValues<
@@ -444,13 +444,13 @@ export function deserializeIntoItemListGetResponse_result(
       >(createItemListGetResponse_result_itemsFromDiscriminatorValue);
     },
     "result_count": (n) => {
-      itemListGetResponse_result.result_count = n.getNumberValue();
+      itemListGetResponse_result.resultCount = n.getNumberValue();
     },
     "status": (n) => {
       itemListGetResponse_result.status = n.getNumberValue();
     },
     "total_count": (n) => {
-      itemListGetResponse_result.total_count = n.getNumberValue();
+      itemListGetResponse_result.totalCount = n.getNumberValue();
     },
   };
 }
@@ -474,7 +474,7 @@ export function deserializeIntoItemListGetResponse_result_items(
       >(createItemListGetResponse_result_items_campaignFromDiscriminatorValue);
     },
     "category_name": (n) => {
-      itemListGetResponse_result_items.category_name = n.getStringValue();
+      itemListGetResponse_result_items.categoryName = n.getStringValue();
     },
     "cdinfo": (n) => {
       itemListGetResponse_result_items.cdinfo = n.getObjectValue<
@@ -482,7 +482,7 @@ export function deserializeIntoItemListGetResponse_result_items(
       >(createItemListGetResponse_result_items_cdinfoFromDiscriminatorValue);
     },
     "content_id": (n) => {
-      itemListGetResponse_result_items.content_id = n.getStringValue();
+      itemListGetResponse_result_items.contentId = n.getStringValue();
     },
     "date": (n) => {
       itemListGetResponse_result_items.date = n.getStringValue();
@@ -493,10 +493,10 @@ export function deserializeIntoItemListGetResponse_result_items(
       >(createItemListGetResponse_result_items_directoryFromDiscriminatorValue);
     },
     "floor_code": (n) => {
-      itemListGetResponse_result_items.floor_code = n.getStringValue();
+      itemListGetResponse_result_items.floorCode = n.getStringValue();
     },
     "floor_name": (n) => {
-      itemListGetResponse_result_items.floor_name = n.getStringValue();
+      itemListGetResponse_result_items.floorName = n.getStringValue();
     },
     "imageURL": (n) => {
       itemListGetResponse_result_items.imageURL = n.getObjectValue<
@@ -515,7 +515,7 @@ export function deserializeIntoItemListGetResponse_result_items(
       itemListGetResponse_result_items.jancode = n.getStringValue();
     },
     "maker_product": (n) => {
-      itemListGetResponse_result_items.maker_product = n.getStringValue();
+      itemListGetResponse_result_items.makerProduct = n.getStringValue();
     },
     "number": (n) => {
       itemListGetResponse_result_items.number = n.getStringValue();
@@ -526,7 +526,7 @@ export function deserializeIntoItemListGetResponse_result_items(
       >(createItemListGetResponse_result_items_pricesFromDiscriminatorValue);
     },
     "product_id": (n) => {
-      itemListGetResponse_result_items.product_id = n.getStringValue();
+      itemListGetResponse_result_items.productId = n.getStringValue();
     },
     "review": (n) => {
       itemListGetResponse_result_items.review = n.getObjectValue<
@@ -544,10 +544,10 @@ export function deserializeIntoItemListGetResponse_result_items(
       >(createItemListGetResponse_result_items_sampleMovieURLFromDiscriminatorValue);
     },
     "service_code": (n) => {
-      itemListGetResponse_result_items.service_code = n.getStringValue();
+      itemListGetResponse_result_items.serviceCode = n.getStringValue();
     },
     "service_name": (n) => {
-      itemListGetResponse_result_items.service_name = n.getStringValue();
+      itemListGetResponse_result_items.serviceName = n.getStringValue();
     },
     "stock": (n) => {
       itemListGetResponse_result_items.stock = n.getStringValue();
@@ -580,10 +580,10 @@ export function deserializeIntoItemListGetResponse_result_items_campaign(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "date_begin": (n) => {
-      itemListGetResponse_result_items_campaign.date_begin = n.getStringValue();
+      itemListGetResponse_result_items_campaign.dateBegin = n.getStringValue();
     },
     "date_end": (n) => {
-      itemListGetResponse_result_items_campaign.date_end = n.getStringValue();
+      itemListGetResponse_result_items_campaign.dateEnd = n.getStringValue();
     },
     "title": (n) => {
       itemListGetResponse_result_items_campaign.title = n.getStringValue();
@@ -992,7 +992,7 @@ export function deserializeIntoItemListGetResponse_result_items_prices(
       >(createItemListGetResponse_result_items_prices_deliveriesFromDiscriminatorValue);
     },
     "list_price": (n) => {
-      itemListGetResponse_result_items_prices.list_price = n.getStringValue();
+      itemListGetResponse_result_items_prices.listPrice = n.getStringValue();
     },
     "price": (n) => {
       itemListGetResponse_result_items_prices.price = n.getStringValue();
@@ -1070,13 +1070,13 @@ export function deserializeIntoItemListGetResponse_result_items_sampleImageURL(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "sample_l": (n) => {
-      itemListGetResponse_result_items_sampleImageURL.sample_l = n
+      itemListGetResponse_result_items_sampleImageURL.sampleL = n
         .getCollectionOfObjectValues<
           ItemListGetResponse_result_items_sampleImageURL_sample_l
         >(createItemListGetResponse_result_items_sampleImageURL_sample_lFromDiscriminatorValue);
     },
     "sample_s": (n) => {
-      itemListGetResponse_result_items_sampleImageURL.sample_s = n
+      itemListGetResponse_result_items_sampleImageURL.sampleS = n
         .getCollectionOfObjectValues<
           ItemListGetResponse_result_items_sampleImageURL_sample_s
         >(createItemListGetResponse_result_items_sampleImageURL_sample_sFromDiscriminatorValue);
@@ -1129,27 +1129,27 @@ export function deserializeIntoItemListGetResponse_result_items_sampleMovieURL(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "pc_flag": (n) => {
-      itemListGetResponse_result_items_sampleMovieURL.pc_flag = n
+      itemListGetResponse_result_items_sampleMovieURL.pcFlag = n
         .getNumberValue();
     },
     "size_476_306": (n) => {
-      itemListGetResponse_result_items_sampleMovieURL.size_476_306 = n
+      itemListGetResponse_result_items_sampleMovieURL.size476306 = n
         .getStringValue();
     },
     "size_560_360": (n) => {
-      itemListGetResponse_result_items_sampleMovieURL.size_560_360 = n
+      itemListGetResponse_result_items_sampleMovieURL.size560360 = n
         .getStringValue();
     },
     "size_644_414": (n) => {
-      itemListGetResponse_result_items_sampleMovieURL.size_644_414 = n
+      itemListGetResponse_result_items_sampleMovieURL.size644414 = n
         .getStringValue();
     },
     "size_720_480": (n) => {
-      itemListGetResponse_result_items_sampleMovieURL.size_720_480 = n
+      itemListGetResponse_result_items_sampleMovieURL.size720480 = n
         .getStringValue();
     },
     "sp_flag": (n) => {
-      itemListGetResponse_result_items_sampleMovieURL.sp_flag = n
+      itemListGetResponse_result_items_sampleMovieURL.spFlag = n
         .getNumberValue();
     },
   };
@@ -1231,11 +1231,11 @@ export interface ItemListGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string | null;
+  affiliateId?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string | null;
+  apiId?: string | null;
   /**
    * The floor property
    */
@@ -1262,7 +1262,7 @@ export interface ItemListGetResponse_result
   /**
    * 検索開始位置
    */
-  first_position?: number | null;
+  firstPosition?: number | null;
   /**
    * 商品情報
    */
@@ -1270,7 +1270,7 @@ export interface ItemListGetResponse_result
   /**
    * 取得件数
    */
-  result_count?: number | null;
+  resultCount?: number | null;
   /**
    * ステータスコード
    */
@@ -1278,7 +1278,7 @@ export interface ItemListGetResponse_result
   /**
    * 全体件数
    */
-  total_count?: number | null;
+  totalCount?: number | null;
 }
 export interface ItemListGetResponse_result_items
   extends AdditionalDataHolder, Parsable {
@@ -1297,7 +1297,7 @@ export interface ItemListGetResponse_result_items
   /**
    * カテゴリ名
    */
-  category_name?: string | null;
+  categoryName?: string | null;
   /**
    * CD情報
    */
@@ -1305,7 +1305,7 @@ export interface ItemListGetResponse_result_items
   /**
    * 商品ID
    */
-  content_id?: string | null;
+  contentId?: string | null;
   /**
    * 発売日、配信開始日、貸出開始日
    */
@@ -1317,11 +1317,11 @@ export interface ItemListGetResponse_result_items
   /**
    * フロアコード
    */
-  floor_code?: string | null;
+  floorCode?: string | null;
   /**
    * フロア名
    */
-  floor_name?: string | null;
+  floorName?: string | null;
   /**
    * 画像URL
    */
@@ -1341,7 +1341,7 @@ export interface ItemListGetResponse_result_items
   /**
    * メーカー品番
    */
-  maker_product?: string | null;
+  makerProduct?: string | null;
   /**
    * 巻数
    */
@@ -1353,7 +1353,7 @@ export interface ItemListGetResponse_result_items
   /**
    * 品番
    */
-  product_id?: string | null;
+  productId?: string | null;
   /**
    * レビュー平均点
    */
@@ -1369,11 +1369,11 @@ export interface ItemListGetResponse_result_items
   /**
    * サービスコード
    */
-  service_code?: string | null;
+  serviceCode?: string | null;
   /**
    * サービス名
    */
-  service_name?: string | null;
+  serviceName?: string | null;
   /**
    * 在庫状況
    */
@@ -1407,11 +1407,11 @@ export interface ItemListGetResponse_result_items_campaign
   /**
    * キャンペーン開始日時
    */
-  date_begin?: string | null;
+  dateBegin?: string | null;
   /**
    * キャンペーン終了日時
    */
-  date_end?: string | null;
+  dateEnd?: string | null;
   /**
    * キャンペーンタイトル
    */
@@ -1733,7 +1733,7 @@ export interface ItemListGetResponse_result_items_prices
   /**
    * 定価
    */
-  list_price?: string | null;
+  listPrice?: string | null;
   /**
    * 金額
    */
@@ -1800,11 +1800,11 @@ export interface ItemListGetResponse_result_items_sampleImageURL
   /**
    * サンプル（大）リスト
    */
-  sample_l?: ItemListGetResponse_result_items_sampleImageURL_sample_l[] | null;
+  sampleL?: ItemListGetResponse_result_items_sampleImageURL_sample_l[] | null;
   /**
    * サンプル（小）リスト
    */
-  sample_s?: ItemListGetResponse_result_items_sampleImageURL_sample_s[] | null;
+  sampleS?: ItemListGetResponse_result_items_sampleImageURL_sample_s[] | null;
 }
 export interface ItemListGetResponse_result_items_sampleImageURL_sample_l
   extends AdditionalDataHolder, Parsable {
@@ -1840,27 +1840,27 @@ export interface ItemListGetResponse_result_items_sampleMovieURL
   /**
    * PC対応しているか
    */
-  pc_flag?: number | null;
+  pcFlag?: number | null;
   /**
    * 476×306
    */
-  size_476_306?: string | null;
+  size476306?: string | null;
   /**
    * 560×360
    */
-  size_560_360?: string | null;
+  size560360?: string | null;
   /**
    * 644×414
    */
-  size_644_414?: string | null;
+  size644414?: string | null;
   /**
    * 720×480
    */
-  size_720_480?: string | null;
+  size720480?: string | null;
   /**
    * スマホ対応しているか
    */
-  sp_flag?: number | null;
+  spFlag?: number | null;
 }
 export interface ItemListGetResponse_result_items_tachiyomi
   extends AdditionalDataHolder, Parsable {
@@ -2027,11 +2027,11 @@ export function serializeItemListGetResponse_request_parameters(
   if (itemListGetResponse_request_parameters) {
     writer.writeStringValue(
       "affiliate_id",
-      itemListGetResponse_request_parameters.affiliate_id,
+      itemListGetResponse_request_parameters.affiliateId,
     );
     writer.writeStringValue(
       "api_id",
-      itemListGetResponse_request_parameters.api_id,
+      itemListGetResponse_request_parameters.apiId,
     );
     writer.writeStringValue(
       "floor",
@@ -2069,7 +2069,7 @@ export function serializeItemListGetResponse_result(
   if (itemListGetResponse_result) {
     writer.writeNumberValue(
       "first_position",
-      itemListGetResponse_result.first_position,
+      itemListGetResponse_result.firstPosition,
     );
     writer.writeCollectionOfObjectValues<ItemListGetResponse_result_items>(
       "items",
@@ -2078,12 +2078,12 @@ export function serializeItemListGetResponse_result(
     );
     writer.writeNumberValue(
       "result_count",
-      itemListGetResponse_result.result_count,
+      itemListGetResponse_result.resultCount,
     );
     writer.writeNumberValue("status", itemListGetResponse_result.status);
     writer.writeNumberValue(
       "total_count",
-      itemListGetResponse_result.total_count,
+      itemListGetResponse_result.totalCount,
     );
     writer.writeAdditionalData(itemListGetResponse_result.additionalData);
   }
@@ -2112,7 +2112,7 @@ export function serializeItemListGetResponse_result_items(
     );
     writer.writeStringValue(
       "category_name",
-      itemListGetResponse_result_items.category_name,
+      itemListGetResponse_result_items.categoryName,
     );
     writer.writeObjectValue<ItemListGetResponse_result_items_cdinfo>(
       "cdinfo",
@@ -2121,7 +2121,7 @@ export function serializeItemListGetResponse_result_items(
     );
     writer.writeStringValue(
       "content_id",
-      itemListGetResponse_result_items.content_id,
+      itemListGetResponse_result_items.contentId,
     );
     writer.writeStringValue("date", itemListGetResponse_result_items.date);
     writer.writeObjectValue<ItemListGetResponse_result_items_directory>(
@@ -2131,11 +2131,11 @@ export function serializeItemListGetResponse_result_items(
     );
     writer.writeStringValue(
       "floor_code",
-      itemListGetResponse_result_items.floor_code,
+      itemListGetResponse_result_items.floorCode,
     );
     writer.writeStringValue(
       "floor_name",
-      itemListGetResponse_result_items.floor_name,
+      itemListGetResponse_result_items.floorName,
     );
     writer.writeObjectValue<ItemListGetResponse_result_items_imageURL>(
       "imageURL",
@@ -2154,7 +2154,7 @@ export function serializeItemListGetResponse_result_items(
     );
     writer.writeStringValue(
       "maker_product",
-      itemListGetResponse_result_items.maker_product,
+      itemListGetResponse_result_items.makerProduct,
     );
     writer.writeStringValue("number", itemListGetResponse_result_items.number);
     writer.writeObjectValue<ItemListGetResponse_result_items_prices>(
@@ -2164,7 +2164,7 @@ export function serializeItemListGetResponse_result_items(
     );
     writer.writeStringValue(
       "product_id",
-      itemListGetResponse_result_items.product_id,
+      itemListGetResponse_result_items.productId,
     );
     writer.writeObjectValue<ItemListGetResponse_result_items_review>(
       "review",
@@ -2183,11 +2183,11 @@ export function serializeItemListGetResponse_result_items(
     );
     writer.writeStringValue(
       "service_code",
-      itemListGetResponse_result_items.service_code,
+      itemListGetResponse_result_items.serviceCode,
     );
     writer.writeStringValue(
       "service_name",
-      itemListGetResponse_result_items.service_name,
+      itemListGetResponse_result_items.serviceName,
     );
     writer.writeStringValue("stock", itemListGetResponse_result_items.stock);
     writer.writeObjectValue<ItemListGetResponse_result_items_tachiyomi>(
@@ -2216,11 +2216,11 @@ export function serializeItemListGetResponse_result_items_campaign(
   if (itemListGetResponse_result_items_campaign) {
     writer.writeStringValue(
       "date_begin",
-      itemListGetResponse_result_items_campaign.date_begin,
+      itemListGetResponse_result_items_campaign.dateBegin,
     );
     writer.writeStringValue(
       "date_end",
-      itemListGetResponse_result_items_campaign.date_end,
+      itemListGetResponse_result_items_campaign.dateEnd,
     );
     writer.writeStringValue(
       "title",
@@ -2751,7 +2751,7 @@ export function serializeItemListGetResponse_result_items_prices(
     );
     writer.writeStringValue(
       "list_price",
-      itemListGetResponse_result_items_prices.list_price,
+      itemListGetResponse_result_items_prices.listPrice,
     );
     writer.writeStringValue(
       "price",
@@ -2857,14 +2857,14 @@ export function serializeItemListGetResponse_result_items_sampleImageURL(
       ItemListGetResponse_result_items_sampleImageURL_sample_l
     >(
       "sample_l",
-      itemListGetResponse_result_items_sampleImageURL.sample_l,
+      itemListGetResponse_result_items_sampleImageURL.sampleL,
       serializeItemListGetResponse_result_items_sampleImageURL_sample_l,
     );
     writer.writeCollectionOfObjectValues<
       ItemListGetResponse_result_items_sampleImageURL_sample_s
     >(
       "sample_s",
-      itemListGetResponse_result_items_sampleImageURL.sample_s,
+      itemListGetResponse_result_items_sampleImageURL.sampleS,
       serializeItemListGetResponse_result_items_sampleImageURL_sample_s,
     );
     writer.writeAdditionalData(
@@ -2931,27 +2931,27 @@ export function serializeItemListGetResponse_result_items_sampleMovieURL(
   if (itemListGetResponse_result_items_sampleMovieURL) {
     writer.writeNumberValue(
       "pc_flag",
-      itemListGetResponse_result_items_sampleMovieURL.pc_flag,
+      itemListGetResponse_result_items_sampleMovieURL.pcFlag,
     );
     writer.writeStringValue(
       "size_476_306",
-      itemListGetResponse_result_items_sampleMovieURL.size_476_306,
+      itemListGetResponse_result_items_sampleMovieURL.size476306,
     );
     writer.writeStringValue(
       "size_560_360",
-      itemListGetResponse_result_items_sampleMovieURL.size_560_360,
+      itemListGetResponse_result_items_sampleMovieURL.size560360,
     );
     writer.writeStringValue(
       "size_644_414",
-      itemListGetResponse_result_items_sampleMovieURL.size_644_414,
+      itemListGetResponse_result_items_sampleMovieURL.size644414,
     );
     writer.writeStringValue(
       "size_720_480",
-      itemListGetResponse_result_items_sampleMovieURL.size_720_480,
+      itemListGetResponse_result_items_sampleMovieURL.size720480,
     );
     writer.writeNumberValue(
       "sp_flag",
-      itemListGetResponse_result_items_sampleMovieURL.sp_flag,
+      itemListGetResponse_result_items_sampleMovieURL.spFlag,
     );
     writer.writeAdditionalData(
       itemListGetResponse_result_items_sampleMovieURL.additionalData,

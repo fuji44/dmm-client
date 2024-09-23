@@ -142,10 +142,10 @@ export function deserializeIntoFloorListGetResponse_request_parameters(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "affiliate_id": (n) => {
-      floorListGetResponse_request_parameters.affiliate_id = n.getStringValue();
+      floorListGetResponse_request_parameters.affiliateId = n.getStringValue();
     },
     "api_id": (n) => {
-      floorListGetResponse_request_parameters.api_id = n.getStringValue();
+      floorListGetResponse_request_parameters.apiId = n.getStringValue();
     },
     "callback": (n) => {
       floorListGetResponse_request_parameters.callback = n.getStringValue();
@@ -281,11 +281,11 @@ export interface FloorListGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string | null;
+  affiliateId?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string | null;
+  apiId?: string | null;
   /**
    * The callback property
    */
@@ -465,11 +465,11 @@ export function serializeFloorListGetResponse_request_parameters(
   if (floorListGetResponse_request_parameters) {
     writer.writeStringValue(
       "affiliate_id",
-      floorListGetResponse_request_parameters.affiliate_id,
+      floorListGetResponse_request_parameters.affiliateId,
     );
     writer.writeStringValue(
       "api_id",
-      floorListGetResponse_request_parameters.api_id,
+      floorListGetResponse_request_parameters.apiId,
     );
     writer.writeStringValue(
       "callback",

@@ -50,11 +50,11 @@ export interface ActressSearchGetResponse_request_parameters
   /**
    * The affiliate_id property
    */
-  affiliate_id?: string | null;
+  affiliateId?: string | null;
   /**
    * The api_id property
    */
-  api_id?: string | null;
+  apiId?: string | null;
   /**
    * The bust property
    */
@@ -93,11 +93,11 @@ export interface ActressSearchGetResponse_result
   /**
    * The first_position property
    */
-  first_position?: number | null;
+  firstPosition?: number | null;
   /**
    * The result_count property
    */
-  result_count?: number | null;
+  resultCount?: number | null;
   /**
    * The status property
    */
@@ -105,7 +105,7 @@ export interface ActressSearchGetResponse_result
   /**
    * The total_count property
    */
-  total_count?: string | null;
+  totalCount?: string | null;
 }
 export interface ActressSearchGetResponse_result_actress
   extends AdditionalDataHolder, Parsable {
@@ -120,7 +120,7 @@ export interface ActressSearchGetResponse_result_actress
   /**
    * The blood_type property
    */
-  blood_type?: string | null;
+  bloodType?: string | null;
   /**
    * The bust property
    */
@@ -443,11 +443,11 @@ export function deserializeIntoActressSearchGetResponse_request_parameters(
 ): Record<string, (node: ParseNode) => void> {
   return {
     "affiliate_id": (n) => {
-      actressSearchGetResponse_request_parameters.affiliate_id = n
+      actressSearchGetResponse_request_parameters.affiliateId = n
         .getStringValue();
     },
     "api_id": (n) => {
-      actressSearchGetResponse_request_parameters.api_id = n.getStringValue();
+      actressSearchGetResponse_request_parameters.apiId = n.getStringValue();
     },
     "bust": (n) => {
       actressSearchGetResponse_request_parameters.bust = n.getStringValue();
@@ -486,16 +486,16 @@ export function deserializeIntoActressSearchGetResponse_result(
       >(createActressSearchGetResponse_result_actressFromDiscriminatorValue);
     },
     "first_position": (n) => {
-      actressSearchGetResponse_result.first_position = n.getNumberValue();
+      actressSearchGetResponse_result.firstPosition = n.getNumberValue();
     },
     "result_count": (n) => {
-      actressSearchGetResponse_result.result_count = n.getNumberValue();
+      actressSearchGetResponse_result.resultCount = n.getNumberValue();
     },
     "status": (n) => {
       actressSearchGetResponse_result.status = n.getStringValue();
     },
     "total_count": (n) => {
-      actressSearchGetResponse_result.total_count = n.getStringValue();
+      actressSearchGetResponse_result.totalCount = n.getStringValue();
     },
   };
 }
@@ -514,7 +514,7 @@ export function deserializeIntoActressSearchGetResponse_result_actress(
       actressSearchGetResponse_result_actress.birthday = n.getStringValue();
     },
     "blood_type": (n) => {
-      actressSearchGetResponse_result_actress.blood_type = n.getStringValue();
+      actressSearchGetResponse_result_actress.bloodType = n.getStringValue();
     },
     "bust": (n) => {
       actressSearchGetResponse_result_actress.bust = n.getStringValue();
@@ -680,11 +680,11 @@ export function serializeActressSearchGetResponse_request_parameters(
   if (actressSearchGetResponse_request_parameters) {
     writer.writeStringValue(
       "affiliate_id",
-      actressSearchGetResponse_request_parameters.affiliate_id,
+      actressSearchGetResponse_request_parameters.affiliateId,
     );
     writer.writeStringValue(
       "api_id",
-      actressSearchGetResponse_request_parameters.api_id,
+      actressSearchGetResponse_request_parameters.apiId,
     );
     writer.writeStringValue(
       "bust",
@@ -737,16 +737,16 @@ export function serializeActressSearchGetResponse_result(
     );
     writer.writeNumberValue(
       "first_position",
-      actressSearchGetResponse_result.first_position,
+      actressSearchGetResponse_result.firstPosition,
     );
     writer.writeNumberValue(
       "result_count",
-      actressSearchGetResponse_result.result_count,
+      actressSearchGetResponse_result.resultCount,
     );
     writer.writeStringValue("status", actressSearchGetResponse_result.status);
     writer.writeStringValue(
       "total_count",
-      actressSearchGetResponse_result.total_count,
+      actressSearchGetResponse_result.totalCount,
     );
     writer.writeAdditionalData(actressSearchGetResponse_result.additionalData);
   }
@@ -770,7 +770,7 @@ export function serializeActressSearchGetResponse_result_actress(
     );
     writer.writeStringValue(
       "blood_type",
-      actressSearchGetResponse_result_actress.blood_type,
+      actressSearchGetResponse_result_actress.bloodType,
     );
     writer.writeStringValue(
       "bust",
