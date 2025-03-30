@@ -42,9 +42,9 @@ import {
   type BaseRequestBuilder,
   type KeysToExcludeForNavigationMetadata,
   type NavigationMetadata,
-  registerDefaultDeserializer,
-  registerDefaultSerializer,
+  ParseNodeFactoryRegistry,
   type RequestAdapter,
+  SerializationWriterFactoryRegistry,
 } from "@microsoft/kiota-abstractions";
 // @ts-ignore
 import {
@@ -70,13 +70,61 @@ import {
  */
 // @ts-ignore
 export function createDMMClient(requestAdapter: RequestAdapter): DMMClient {
-  registerDefaultSerializer(JsonSerializationWriterFactory);
-  registerDefaultSerializer(TextSerializationWriterFactory);
-  registerDefaultSerializer(FormSerializationWriterFactory);
-  registerDefaultSerializer(MultipartSerializationWriterFactory);
-  registerDefaultDeserializer(JsonParseNodeFactory);
-  registerDefaultDeserializer(TextParseNodeFactory);
-  registerDefaultDeserializer(FormParseNodeFactory);
+  if (requestAdapter === undefined) {
+    throw new Error("requestAdapter cannot be undefined");
+  }
+  let serializationWriterFactory: SerializationWriterFactoryRegistry;
+  let parseNodeFactoryRegistry: ParseNodeFactoryRegistry;
+
+  if (
+    requestAdapter.getParseNodeFactory() instanceof ParseNodeFactoryRegistry
+  ) {
+    parseNodeFactoryRegistry = requestAdapter
+      .getParseNodeFactory() as ParseNodeFactoryRegistry;
+  } else {
+    throw new Error(
+      "requestAdapter.getParseNodeFactory() is not a ParseNodeFactoryRegistry",
+    );
+  }
+
+  if (
+    requestAdapter.getSerializationWriterFactory() instanceof
+      SerializationWriterFactoryRegistry
+  ) {
+    serializationWriterFactory = requestAdapter
+      .getSerializationWriterFactory() as SerializationWriterFactoryRegistry;
+  } else {
+    throw new Error(
+      "requestAdapter.getSerializationWriterFactory() is not a SerializationWriterFactoryRegistry",
+    );
+  }
+
+  serializationWriterFactory.registerDefaultSerializer(
+    JsonSerializationWriterFactory,
+  );
+  serializationWriterFactory.registerDefaultSerializer(
+    TextSerializationWriterFactory,
+  );
+  serializationWriterFactory.registerDefaultSerializer(
+    FormSerializationWriterFactory,
+  );
+  serializationWriterFactory.registerDefaultSerializer(
+    MultipartSerializationWriterFactory,
+  );
+
+  const backingStoreFactory = requestAdapter.getBackingStoreFactory();
+  parseNodeFactoryRegistry.registerDefaultDeserializer(
+    JsonParseNodeFactory,
+    backingStoreFactory,
+  );
+  parseNodeFactoryRegistry.registerDefaultDeserializer(
+    TextParseNodeFactory,
+    backingStoreFactory,
+  );
+  parseNodeFactoryRegistry.registerDefaultDeserializer(
+    FormParseNodeFactory,
+    backingStoreFactory,
+  );
   if (
     requestAdapter.baseUrl === undefined || requestAdapter.baseUrl === null ||
     requestAdapter.baseUrl === ""

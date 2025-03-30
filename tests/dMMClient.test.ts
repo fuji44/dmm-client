@@ -1,12 +1,12 @@
 import { load } from "@std/dotenv";
 import { assertExists } from "@std/assert";
 
-import { FetchRequestAdapter } from "@microsoft/kiota-http-fetchlibrary";
 import {
   ApiKeyLocation,
+  createDMMClient,
+  FetchRequestAdapter,
   MultiApiKeyAuthenticationProvider,
-} from "../kiota/authenticationProvider.ts";
-import { createDMMClient } from "../client/dMMClient.ts";
+} from "../mod.ts";
 
 await load({
   envPath: "./.env",

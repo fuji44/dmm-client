@@ -7,24 +7,21 @@ An unofficial TypeScript client for the DMM web service. The client code is gene
 
 ## Usage
 
-Add this package and the `kiota-http-fetchlibrary` as dependencies.
-
 ```shell
 # Deno
-deno add @fuji44/dmm-client npm:@microsoft/kiota-http-fetchlibrary@^1.0.0-preview.58
+deno add @fuji44/dmm-client
 
 # Node.js
-npm i @microsoft/kiota-http-fetchlibrary@^1.0.0-preview.58
 npx jsr add @fuji44/dmm-client
 ```
 
 Coding is the same as for general Kiota client usage.
 
 ```ts
-import { FetchRequestAdapter } from "@microsoft/kiota-http-fetchlibrary";
 import {
   ApiKeyLocation,
   createDMMClient,
+  FetchRequestAdapter,
   MultiApiKeyAuthenticationProvider,
 } from "@fuji44/dmm-client";
 
